@@ -1,0 +1,446 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.83116403844366, 16.489683291904488]
+            },
+            "properties": {
+                "name": "นั่งเล่น โนนม่วง ขอนแก่น",
+                "description": "ร้านนั่งชิลล์บรรยากาศดีในย่านโนนม่วง",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.3,
+                "features": ["outdoor", "parking"],
+                "opening_hours": "17:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เบียร์", "อาหารไทย", "นั่งชิลล์"],
+                "phone": "099-123-4567",
+                "address": "โนนม่วง ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81145798527861, 16.487625348647025]
+            },
+            "properties": {
+                "name": "Night Sky Bar",
+                "description": "บาร์ rooftop ชมวิวเมืองขอนแก่นยามค่ำคืน",
+                "type": "bar",
+                "price_level": 3,
+                "rating": 4.5,
+                "features": ["outdoor", "live"],
+                "opening_hours": "18:00 - 02:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ค็อกเทล", "วิวสวย", "ดนตรีสด"],
+                "phone": "088-234-5678",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.8169132033142, 16.485763511462537]
+            },
+            "properties": {
+                "name": "Lung Mor",
+                "description": "ร้านนั่งดื่มสไตล์ชุมชน บรรยากาศเป็นกันเอง",
+                "type": "bar",
+                "price_level": 1,
+                "rating": 4.0,
+                "features": ["outdoor"],
+                "opening_hours": "16:00 - 23:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เบียร์", "อาหารท้องถิ่น"],
+                "phone": "087-345-6789",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81778705610063, 16.48579757980624]
+            },
+            "properties": {
+                "name": "Alone in the Universe",
+                "description": "บาร์เงียบสงบสำหรับคนรักความเป็นส่วนตัว",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.2,
+                "features": ["outdoor"],
+                "opening_hours": "17:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ไวน์", "ค็อกเทล", "เงียบสงบ"],
+                "phone": "086-456-7890",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.817198947158, 16.485376846139502]
+            },
+            "properties": {
+                "name": "Hashtags ขอนแก่น",
+                "description": "ร้านทันสมัย เหมาะกับวัยรุ่นและการถ่ายรูป",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.4,
+                "features": ["parking"],
+                "opening_hours": "18:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ค็อกเทล", "ถ่ายรูปสวย", "วัยรุ่น"],
+                "phone": "089-567-8901",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.8173946762677, 16.4849152986623]
+            },
+            "properties": {
+                "name": "Be To Sit",
+                "description": "ร้านนั่งดื่มเรียบง่าย บรรยากาศสบาย ๆ",
+                "type": "bar",
+                "price_level": 1,
+                "rating": 4.1,
+                "features": ["outdoor"],
+                "opening_hours": "16:00 - 23:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เบียร์", "อาหารว่าง"],
+                "phone": "085-678-9012",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.82232923661628, 16.42458247013266]
+            },
+            "properties": {
+                "name": "Rong Lao Mittraphap Khon Kaen",
+                "description": "โรงเหล้าสไตล์อีสานแท้ ๆ",
+                "type": "bar",
+                "price_level": 1,
+                "rating": 4.0,
+                "features": ["live", "parking"],
+                "opening_hours": "17:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เหล้าท้องถิ่น", "ดนตรีอีสาน", "อาหารอีสาน"],
+                "phone": "082-789-0123",
+                "address": "ถนนมิตรภาพ ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81787543916475, 16.484088757994346]
+            },
+            "properties": {
+                "name": "Bennington Bar KK",
+                "description": "บาร์สไตล์ตะวันตกในใจกลางขอนแก่น",
+                "type": "bar",
+                "price_level": 3,
+                "rating": 4.6,
+                "features": ["live", "parking"],
+                "opening_hours": "18:00 - 02:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["คราฟท์เบียร์", "ดนตรีสด", "อาหารฝรั่ง"],
+                "phone": "081-890-1234",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81786093949138, 16.48439147213917]
+            },
+            "properties": {
+                "name": "Re-playground",
+                "description": "บาร์ที่มีเกมและกิจกรรมให้เล่น",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.3,
+                "features": ["parking"],
+                "opening_hours": "17:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เกม", "เบียร์", "วัยรุ่น"],
+                "phone": "083-901-2345",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.82869980902333, 16.42798020669514]
+            },
+            "properties": {
+                "name": "The Library Khon Kaen",
+                "description": "บาร์สไตล์ห้องสมุด เงียบสงบและมีสไตล์",
+                "type": "bar",
+                "price_level": 3,
+                "rating": 4.7,
+                "features": ["outdoor"],
+                "opening_hours": "18:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ไวน์", "ค็อกเทล", "เงียบสงบ"],
+                "phone": "080-012-3456",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.82271803712418, 16.46493127653918]
+            },
+            "properties": {
+                "name": "Narbaan Sound Bar",
+                "description": "บาร์ที่มีระบบเสียงคุณภาพสูง",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.4,
+                "features": ["live", "parking"],
+                "opening_hours": "18:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ดนตรีสด", "เบียร์", "เสียงดี"],
+                "phone": "084-123-4567",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.82881696802424, 16.428607469770554]
+            },
+            "properties": {
+                "name": "ลงเอย Lngxey Bar",
+                "description": "บาร์นั่งชิลล์ยอดนิยมในขอนแก่น",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.5,
+                "features": ["outdoor", "live"],
+                "opening_hours": "17:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เบียร์", "ดนตรีสด", "นั่งชิลล์"],
+                "phone": "087-234-5678",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.84567425691789, 16.437792175367534]
+            },
+            "properties": {
+                "name": "ลอนดอน อินน์ - London Inn",
+                "description": "บาร์สไตล์อังกฤษในขอนแก่น",
+                "type": "pub",
+                "price_level": 3,
+                "rating": 4.6,
+                "features": ["parking"],
+                "opening_hours": "17:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เบียร์นำเข้า", "อาหารฝรั่ง", "สไตล์อังกฤษ"],
+                "phone": "088-345-6789",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81777963521418, 16.484544083281357]
+            },
+            "properties": {
+                "name": "Three Bar",
+                "description": "บาร์เล็ก ๆ แต่บรรยากาศดี",
+                "type": "bar",
+                "price_level": 1,
+                "rating": 4.2,
+                "features": ["outdoor"],
+                "opening_hours": "16:00 - 23:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["เบียร์", "นั่งชิลล์"],
+                "phone": "086-456-7890",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81755788558485, 16.484595299688994]
+            },
+            "properties": {
+                "name": "88",
+                "description": "บาร์ลับที่มีเอกลักษณ์",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.3,
+                "features": ["live"],
+                "opening_hours": "18:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ค็อกเทล", "ดนตรีสด", "ลับ"],
+                "phone": "089-567-8901",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.8164569577139, 16.485629746586955]
+            },
+            "properties": {
+                "name": "วชิคาเฟ่ - Wachi Cafe",
+                "description": "คาเฟ่ที่กลายเป็นบาร์ยามค่ำ",
+                "type": "restaurant",
+                "price_level": 2,
+                "rating": 4.4,
+                "features": ["outdoor", "parking"],
+                "opening_hours": "15:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["กาแฟ", "เบียร์", "อาหารว่าง"],
+                "phone": "085-678-9012",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.8160329500089, 16.483630044740135]
+            },
+            "properties": {
+                "name": "AtTazz แอทต๊าซซ Khonkaen",
+                "description": "บาร์ที่มีดีไซน์ทันสมัย",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.3,
+                "features": ["parking"],
+                "opening_hours": "17:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ค็อกเทล", "เบียร์", "ทันสมัย"],
+                "phone": "082-789-0123",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.81599084077372, 16.48363065412048]
+            },
+            "properties": {
+                "name": "โฟล์คพระนคร ม่วนบ่เซา ขอนแก่น",
+                "description": "บาร์สไตล์โฟล์คอีสาน ครึกครื้นตลอดคืน",
+                "type": "bar",
+                "price_level": 1,
+                "rating": 4.5,
+                "features": ["live", "outdoor"],
+                "opening_hours": "17:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ดนตรีอีสาน", "เหล้าท้องถิ่น", "อาหารอีสาน"],
+                "phone": "081-890-1234",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.83607202728875, 16.430219826331257]
+            },
+            "properties": {
+                "name": "Hidden Town",
+                "description": "บาร์ลับในเมืองขอนแก่น",
+                "type": "bar",
+                "price_level": 3,
+                "rating": 4.6,
+                "features": ["live"],
+                "opening_hours": "18:00 - 02:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ค็อกเทล", "ดนตรีสด", "ลับ"],
+                "phone": "083-901-2345",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.82647416707151, 16.453782804601904]
+            },
+            "properties": {
+                "name": "Let It Beer",
+                "description": "บาร์สำหรับคนรักคราฟท์เบียร์",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.5,
+                "features": ["outdoor", "parking"],
+                "opening_hours": "17:00 - 24:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["คราฟท์เบียร์", "อาหารว่าง", "นั่งชิลล์"],
+                "phone": "080-012-3456",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400", "https://via.placeholder.com/600x400"]
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [102.82972377177065, 16.442239967706488]
+            },
+            "properties": {
+                "name": "Praphon Bar",
+                "description": "บาร์ที่มีดนตรีสดและบรรยากาศดี",
+                "type": "bar",
+                "price_level": 2,
+                "rating": 4.4,
+                "features": ["live", "outdoor"],
+                "opening_hours": "17:00 - 01:00",
+                "thumbnail": "https://via.placeholder.com/250x150",
+                "tags": ["ดนตรีสด", "เบียร์", "นั่งชิลล์"],
+                "phone": "084-123-4567",
+                "address": "ขอนแก่น",
+                "photos": ["https://via.placeholder.com/600x400"]
+            }
+        }
+    ]
+}

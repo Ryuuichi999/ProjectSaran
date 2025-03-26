@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhonKaen Drinks Map - หน้าแรก</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1><i class="fas fa-glass-cheers"></i> KhonKaen Drinks Map</h1>
+        <div class="navbar-links">
+            <a href="login.html" class="navbar-link">ล็อคอิน</a>
+            <a href="register.html" class="navbar-link">สมัครสมาชิก</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>ค้นหาที่นั่งดื่มสุดชิลล์ในขอนแก่น</h2>
+            <p>พบกับบาร์และร้านนั่งดื่มที่ดีที่สุดในขอนแก่น พร้อมแผนที่และข้อมูลครบครัน</p>
+            <button class="hero-button" id="exploreButton">สำรวจเลย!</button>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="action-button" id="spinWheelButton">
+            <i class="fas fa-dice"></i> สุ่มวงล้อ
+        </button>
+        <button class="action-button" id="showAllBarsButton">
+            <i class="fas fa-list"></i> ร้านทั้งหมด
+        </button>
+    </div>
+
+    <!-- Wheel Section -->
+    <div class="wheel-container" id="wheelContainer" style="display: none;">
+        <div class="wheel" id="wheel">
+            <!-- วงล้อจะถูกสร้างด้วย JavaScript -->
+        </div>
+        <button class="spin-button" id="spinButton">หมุน!</button>
+    </div>
+
+    <!-- Popular Bars Section -->
+    <div class="popular-section">
+        <h3>ร้านยอดนิยมในขอนแก่น</h3>
+        <div class="popular-bars" id="popularBars">
+            <!-- ร้านยอดนิยมจะถูกเพิ่มด้วย JavaScript -->
+        </div>
+    </div>
+
+    <!-- All Bars Section -->
+    <div class="bar-list-section">
+        <h3>ร้านนั่งดื่มทั้งหมดในขอนแก่น</h3>
+        <div class="bar-list" id="barList">
+            <!-- รายชื่อร้านจะถูกเพิ่มด้วย JavaScript -->
+        </div>
+    </div>
+
+        
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 KhonKaen Drinks Map. All rights reserved.</p>
+    </footer>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

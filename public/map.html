@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhonKaen Drinks Map - แผนที่</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="../public/css/map.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="header">
+        <h1><i class="fas fa-glass-cheers"></i> KhonKaen Drinks Map</h1>
+        <div class="header-controls">
+            <button class="back-button" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i> กลับไปหน้าแรก
+            </button>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="ค้นหาร้าน...">
+            </div>
+            <button class="filter-button" id="filterButton">
+                <i class="fas fa-filter"></i> ตัวกรอง
+            </button>
+            <div class="filter-options" id="filterOptions">
+                <div class="filter-section">
+                    <h4>ประเภทร้าน</h4>
+                    <div class="filter-option">
+                        <input type="checkbox" id="typeBar" value="bar">
+                        <label for="typeBar">บาร์</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="typePub" value="pub">
+                        <label for="typePub">ผับ</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="typeRestaurant" value="restaurant">
+                        <label for="typeRestaurant">ร้านอาหาร</label>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>เรทราคา</h4>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price1" value="1">
+                        <label for="price1">$ (น้อยกว่า 500 บาท)</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price2" value="2">
+                        <label for="price2">$$ (500-1,000 บาท)</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="price3" value="3">
+                        <label for="price3">$$$ (มากกว่า 1,000 บาท)</label>
+                    </div>
+                </div>
+                <div class="filter-section">
+                    <h4>คุณสมบัติ</h4>
+                    <div class="filter-option">
+                        <input type="checkbox" id="featureLive" value="live">
+                        <label for="featureLive">มีดนตรีสด</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="featureOutdoor" value="outdoor">
+                        <label for="featureOutdoor">ที่นั่งกลางแจ้ง</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="featureParking" value="parking">
+                        <label for="featureParking">ที่จอดรถ</label>
+                    </div>
+                </div>
+                <button class="apply-filters" id="applyFilters">นำไปใช้</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="map"></div>
+        <button class="toggle-sidebar" id="toggleSidebar">
+            <i class="fas fa-bars"></i>
+        </button>
+        <button class="user-location-button" id="userLocationButton">
+            <i class="fas fa-location-arrow"></i>
+        </button>
+        <div class="sidebar" id="barList">
+            <h3>ร้านนั่งดื่มในขอนแก่น</h3>
+        </div>
+    </div>
+
+    <div class="legend" id="mapLegend">
+        <h4>สัญลักษณ์แผนที่</h4>
+        <div class="legend-item">
+            <div class="legend-color default"></div>
+            <span>ร้านทั่วไป</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color popular"></div>
+            <span>ร้านยอดนิยม</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color featured"></div>
+            <span>มีดนตรีสด</span>
+        </div>
+    </div>
+
+    <div id="photoGallery">
+        <div class="gallery-content">
+            <span class="gallery-close">×</span>
+            <img src="" class="gallery-image" id="galleryImage">
+            <div class="gallery-controls">
+                <button class="gallery-control" id="prevPhoto">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-control" id="nextPhoto">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="notification" id="notification"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="./js/map.js"></script>
+</body>
+</html>
