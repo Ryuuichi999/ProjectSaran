@@ -9,7 +9,7 @@
 <body>
     <div class="register-container">
         <h2>สมัครสมาชิก</h2>
-        <form action="/register" method="POST">
+        <form id="registerForm" action="/register" method="POST">
             <div class="form-group">
                 <label for="username">ชื่อผู้ใช้</label>
                 <input type="text" id="username" name="username" required>
@@ -26,5 +26,7 @@
         </form>
         <a href="login.html" class="login-link">มีบัญชีแล้ว? ล็อคอินที่นี่</a>
     </div>
+    <script src="./js/login.js"></script>
+    <script src="./js/redirectIfLoggedIn.js"></script>
 </body>
 </html>

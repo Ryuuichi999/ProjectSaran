@@ -5,17 +5,12 @@ let barsData = null;
 
 // Fetch GeoJSON data
 fetch('./data/bars.geojson')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('ไม่สามารถโหลดข้อมูล GeoJSON ได้');
-        }
-        return response.json();
-    })
+    .then(response => response.ok ? response.json() : Promise.reject('ไม่สามารถโหลดข้อมูล GeoJSON ได้'))
     .then(data => {
         barsData = data;
-        displayPopularBars(barsData);
-        displayBars(barsData);
-        setupWheel(barsData);
+        displayPopularBars();
+        displayBars();
+        setupWheel();
     })
     .catch(error => {
         console.error('Error loading GeoJSON:', error);
@@ -23,97 +18,78 @@ fetch('./data/bars.geojson')
     });
 
 // Display popular bars (rating >= 4.5)
-function displayPopularBars(bars) {
+function displayPopularBars() {
     const popularBars = document.getElementById('popularBars');
-    const popularFeatures = bars.features.filter(feature => feature.properties.rating >= 4.5);
-
-    popularFeatures.forEach(feature => {
-        const props = feature.properties;
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <img src="${props.thumbnail}" class="bar-image" alt="${props.name}">
-            <div class="bar-content">
-                <strong>${props.name}</strong>
-                <p>${props.description}</p>
-                <div class="bar-meta">
-                    <span>${props.opening_hours}</span>
-                    <span class="ratings">${'★'.repeat(Math.round(props.rating))} (${props.rating})</span>
-                </div>
-                <div class="bar-tags">${props.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
-            </div>
-        `;
-        barItem.addEventListener('click', () => {
-            window.location.href = `map.html?bar=${encodeURIComponent(props.name)}`;
-        });
-        popularBars.appendChild(barItem);
-    });
+    popularBars.innerHTML = '';
+    
+    barsData.features.filter(bar => bar.properties.rating >= 4.5).forEach(addBarItem.bind(null, popularBars));
 }
 
 // Display all bars
-function displayBars(bars) {
+function displayBars() {
     const barList = document.getElementById('barList');
     barList.innerHTML = '';
+    
+    barsData.features.forEach(addBarItem.bind(null, barList));
+}
 
-    bars.features.forEach(feature => {
-        const props = feature.properties;
-        const barItem = document.createElement('div');
-        barItem.className = 'bar-item';
-        barItem.innerHTML = `
-            <img src="${props.thumbnail}" class="bar-image" alt="${props.name}">
-            <div class="bar-content">
-                <strong>${props.name}</strong>
-                <p>${props.description}</p>
-                <div class="bar-meta">
-                    <span>${props.opening_hours}</span>
-                    <span class="ratings">${'★'.repeat(Math.round(props.rating))} (${props.rating})</span>
-                </div>
-                <div class="bar-tags">${props.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+// Add bar item to a container
+function addBarItem(container, feature) {
+    const { name, description, opening_hours, rating, tags, thumbnail } = feature.properties;
+    const barItem = document.createElement('div');
+    barItem.className = 'bar-item';
+    barItem.innerHTML = `
+        <img src="${thumbnail}" class="bar-image" alt="${name}">
+        <div class="bar-content">
+            <strong>${name}</strong>
+            <p>${description}</p>
+            <div class="bar-meta">
+                <span>${opening_hours}</span>
+                <span class="ratings">${'★'.repeat(Math.round(rating))} (${rating})</span>
             </div>
-        `;
-        barItem.addEventListener('click', () => {
-            window.location.href = `map.html?bar=${encodeURIComponent(props.name)}`;
-        });
-        barList.appendChild(barItem);
+            <div class="bar-tags">${tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+        </div>
+    `;
+    barItem.addEventListener('click', () => {
+        window.location.href = `map.html?bar=${encodeURIComponent(name)}`;
     });
+    container.appendChild(barItem);
 }
 
 // Setup the spinning wheel
-function setupWheel(bars) {
+function setupWheel() {
     const wheel = document.getElementById('wheel');
-    const numBars = bars.features.length;
+    wheel.innerHTML = '';
+    const numBars = barsData.features.length;
     const anglePerSegment = 360 / numBars;
-
-    bars.features.forEach((feature, index) => {
+    
+    barsData.features.forEach((feature, index) => {
         const segment = document.createElement('div');
         segment.className = 'wheel-segment';
         segment.style.transform = `rotate(${index * anglePerSegment}deg)`;
         segment.style.backgroundColor = `hsl(${(index * 360) / numBars}, 70%, 50%)`;
-        segment.style.clipPath = `polygon(50% 50%, 50% 0%, ${index === numBars - 1 ? '50%' : '100%'} 0%)`;
         segment.innerHTML = feature.properties.name;
         wheel.appendChild(segment);
     });
 
-    const spinButton = document.getElementById('spinButton');
-    let isSpinning = false;
+    document.getElementById('spinButton').addEventListener('click', spinWheel);
+}
 
-    spinButton.addEventListener('click', () => {
-        if (!isSpinning) {
-            isSpinning = true;
-            const randomAngle = Math.floor(Math.random() * 360) + 720; // หมุน 2 รอบ + มุมสุ่ม
-            wheel.style.transform = `rotate(${randomAngle}deg)`;
+// Spin the wheel
+function spinWheel() {
+    const wheel = document.getElementById('wheel');
+    const numBars = barsData.features.length;
+    const anglePerSegment = 360 / numBars;
+    const randomAngle = Math.floor(Math.random() * 360) + 720;
+    
+    wheel.style.transform = `rotate(${randomAngle}deg)`;
 
-            setTimeout(() => {
-                const selectedIndex = Math.floor(((randomAngle % 360) / anglePerSegment + numBars) % numBars);
-                const selectedBar = bars.features[numBars - 1 - selectedIndex].properties.name;
-                showNotification(`คุณได้ร้าน: ${selectedBar}!`);
-                setTimeout(() => {
-                    window.location.href = `map.html?bar=${encodeURIComponent(selectedBar)}`;
-                }, 2000);
-                isSpinning = false;
-            }, 4000);
-        }
-    });
+    setTimeout(() => {
+        const selectedIndex = Math.floor(((randomAngle % 360) / anglePerSegment + numBars) % numBars);
+        const selectedBar = barsData.features[numBars - 1 - selectedIndex].properties.name;
+        showNotification(`คุณได้ร้าน: ${selectedBar}!`);
+        setTimeout(() => window.location.href = `map.html?bar=${encodeURIComponent(selectedBar)}`, 2000);
+    }, 4000);
 }
 
 // Toggle wheel visibility
@@ -122,19 +98,12 @@ document.getElementById('spinWheelButton').addEventListener('click', () => {
     wheelContainer.style.display = wheelContainer.style.display === 'none' ? 'flex' : 'none';
 });
 
-// Show all bars
-document.getElementById('showAllBarsButton').addEventListener('click', () => {
-    const wheelContainer = document.getElementById('wheelContainer');
-    wheelContainer.style.display = 'none';
-    displayBars(barsData);
-});
-
 // Explore button (scroll to bar list)
 document.getElementById('exploreButton').addEventListener('click', () => {
     document.querySelector('.bar-list-section').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Notification
+// Notification function
 function showNotification(message) {
     const notification = document.getElementById('notification');
     notification.textContent = message;

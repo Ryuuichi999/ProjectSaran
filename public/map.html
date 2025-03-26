@@ -6,7 +6,8 @@
     <title>KhonKaen Drinks Map - แผนที่</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link rel="stylesheet" href="../public/css/map.css">
+    <link rel="stylesheet" href="./css/map.css">
+   
 </head>
 <body>
     <div class="loading-overlay" id="loadingOverlay">
@@ -25,6 +26,10 @@
             <button class="filter-button" id="filterButton">
                 <i class="fas fa-filter"></i> ตัวกรอง
             </button>
+            <div class="user-section" id="userSection">
+                <a href="login.html" class="navbar-link">ล็อกอิน</a>
+                <a href="register.html" class="navbar-link">สมัครสมาชิก</a>
+            </div>
             <div class="filter-options" id="filterOptions">
                 <div class="filter-section">
                     <h4>ประเภทร้าน</h4>
@@ -77,9 +82,7 @@
     </div>
     <div class="container">
         <div id="map"></div>
-        <button class="toggle-sidebar" id="toggleSidebar">
-            <i class="fas fa-bars"></i>
-        </button>
+        <!-- ลบปุ่ม toggle-sidebar ออก -->
         <button class="user-location-button" id="userLocationButton">
             <i class="fas fa-location-arrow"></i>
         </button>
@@ -92,15 +95,15 @@
         <h4>สัญลักษณ์แผนที่</h4>
         <div class="legend-item">
             <div class="legend-color default"></div>
-            <span>ร้านทั่วไป</span>
+            <span>บาร์</span>
         </div>
         <div class="legend-item">
             <div class="legend-color popular"></div>
-            <span>ร้านยอดนิยม</span>
+            <span>ผับ</span>
         </div>
         <div class="legend-item">
             <div class="legend-color featured"></div>
-            <span>มีดนตรีสด</span>
+            <span>ร้านอาหาร</span>
         </div>
     </div>
 
@@ -119,9 +122,37 @@
         </div>
     </div>
 
+    <!-- Modal สำหรับจองโต๊ะ -->
+    <div class="modal" id="reservationModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeReservationModal()">&times;</span>
+            <h3>จองโต๊ะ</h3>
+            <form id="reservationForm">
+                <div class="form-group">
+                    <label for="reservationName">ชื่อผู้จอง</label>
+                    <input type="text" id="reservationName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reservationDateTime">วัน/เวลาที่จอง</label>
+                    <input type="datetime-local" id="reservationDateTime" name="datetime" required>
+                </div>
+                <div class="form-group">
+                    <label for="numberOfPeople">จำนวนคน:</label>
+                    <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" required placeholder="เช่น 4">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">เบอร์โทรศัพท์:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="เช่น 0812345678">
+                </div>
+                <button type="submit">ยืนยันการจอง</button>
+            </form>
+        </div>
+    </div>
+
     <div class="notification" id="notification"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="./js/map.js"></script>
+    <script src="./js/userSection.js"></script>
 </body>
 </html>
