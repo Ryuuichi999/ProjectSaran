@@ -1,574 +1,546 @@
+/* General Styles */
 body {
-    font-family: 'Prompt', 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Prompt', 'Arial', sans-serif; /* กำหนดฟอนต์สำหรับเนื้อหา */
+    margin: 0; /* ลบ margin จาก body */
+    padding: 0; /* ลบ padding จาก body */
+    background-color: #f4f4f4; /* กำหนดพื้นหลังสีอ่อน */
 }
 
+/* Header Styles */
 .header {
-    background-color: #ff5733;
-    color: white;
-    padding: 10px 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    background-color: #ff5733; /* สีพื้นหลังของ header */
+    color: white; /* สีข้อความใน header */
+    padding: 10px 5px; /* กำหนด padding ให้กับ header */
+    display: flex; /* ใช้ Flexbox เพื่อจัดการ layout */
+    justify-content: space-between; /* จัดการให้เนื้อหาภายในอยู่ห่างกัน */
+    align-items: center; /* จัดให้เนื้อหาภายในอยู่กลางแนวตั้ง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กับ header */
+    position: fixed; /* ตำแหน่งคงที่ติดกับหน้าจอ */
+    width: 100%; /* กำหนดความกว้างของ header ให้เต็มหน้าจอ */
+    top: 0; /* ตำแหน่งจากด้านบน */
+    z-index: 1000; /* ให้ header อยู่บนสุด */
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 24px;
+    margin: 0; /* ลบ margin ของ h1 */
+    font-size: 24px; /* ขนาดฟอนต์ของหัวข้อใน header */
 }
 
 .header-controls {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+    display: flex; /* ใช้ Flexbox ในการจัดการกับการควบคุมใน header */
+    gap: 15px; /* เพิ่มช่องว่างระหว่าง control */
+    align-items: center; /* จัดให้ control อยู่กลางแนวตั้ง */
 }
 
-.back-button {
-    background-color: white;
-    color: #ff5733;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
+/* สไตล์ของลิงค์ใน Navbar */
+.navbar-links {
+    display: flex; /* ใช้ Flexbox */
 }
 
-.back-button i {
-    margin-right: 5px;
+.navbar-link {
+    text-decoration: none; /* ไม่ให้มีขีดเส้นใต้ */
+    color: white; /* กำหนดสีตัวอักษร */
+    background-color: #ff5733; /* กำหนดสีพื้นหลัง */
+    padding: 10px 30px; /* เพิ่มระยะห่างภายใน */
+    border-radius: 25px; /* ทำมุมให้กลม */
+    font-size: 16px; /* กำหนดขนาดฟอนต์ */
+    font-weight: bold; /* ทำให้ตัวอักษรหนา */
+    transition: background-color 0.3s, transform 0.3s; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการโฮเวอร์ */
+    display: inline-block; /* แสดงเป็นบล็อกอินไลน์ */
 }
 
+.navbar-link:hover {
+    background-color: #ff9500; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    transform: scale(1.05); /* ขยายขนาดเมื่อโฮเวอร์ */
+}
+
+.navbar-link:active {
+    background-color: #ff5733; /* เปลี่ยนสีเมื่อคลิก */
+    transform: scale(0.98); /* ย่อลงเล็กน้อยเมื่อคลิก */
+}
+
+/* Button Styles */
+.back-button, .filter-button {
+    background-color: white; /* สีพื้นหลังของปุ่ม */
+    color: #ff5733; /* สีข้อความของปุ่ม */
+    border: none; /* ไม่ให้มีขอบ */
+    border-radius: 20px; /* ทำมุมโค้งของปุ่ม */
+    padding: 8px 15px; /* ขนาด padding ของปุ่ม */
+    cursor: pointer; /* เปลี่ยนเป็น pointer เมื่อวางเมาส์บนปุ่ม */
+    display: flex; /* ใช้ Flexbox ภายในปุ่ม */
+    align-items: center; /* จัดให้เนื้อหาภายในปุ่มอยู่กลาง */
+    font-weight: bold; /* ข้อความในปุ่มหนา */
+}
+
+.back-button i, .filter-button i {
+    margin-right: 5px; /* เพิ่มช่องว่างระหว่างไอคอนและข้อความ */
+}
+
+/* Search and Filter Styles */
 .search-container {
-    position: relative;
-    display: inline-block;
+    position: relative; /* ใช้ตำแหน่ง relative สำหรับการจัดการ filter */
+    display: inline-block; /* ให้ search-container อยู่ในบรรทัดเดียวกัน */
 }
 
 #searchInput {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 20px;
-    width: 200px;
-    font-size: 14px;
-}
-
-.filter-button {
-    background-color: white;
-    color: #ff5733;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-}
-
-.filter-button i {
-    margin-right: 5px;
+    padding: 8px 12px; /* ขนาด padding ของช่องค้นหา */
+    border: none; /* ไม่ให้มีขอบ */
+    border-radius: 20px; /* ทำมุมโค้งให้ช่องค้นหา */
+    width: 200px; /* กำหนดความกว้างของช่องค้นหา */
+    font-size: 14px; /* ขนาดฟอนต์ของข้อความในช่องค้นหา */
 }
 
 .filter-options {
-    position: absolute;
-    color: #333;
-    right: 20px;
-    top: 60px;
-    background: rgb(255, 255, 255);
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 15px;
-    width: 250px;
-    display: none;
+    position: absolute; /* ใช้ตำแหน่ง absolute ในการวาง filter */
+    color: #333; /* สีข้อความใน filter */
+    right: 20px; /* ตั้งตำแหน่งจากขวา */
+    top: 60px; /* ตั้งตำแหน่งจากด้านบน */
+    background: rgb(255, 255, 255); /* สีพื้นหลังของ filter */
+    border-radius: 8px; /* ทำมุมโค้งให้กับ filter */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กับ filter */
+    padding: 15px; /* เพิ่ม padding รอบ ๆ filter */
+    width: 250px; /* กำหนดความกว้างของ filter */
+    display: none; /* ซ่อน filter */
 }
 
 .filter-section {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* ช่องว่างระหว่าง filter sections */
 }
 
 .filter-section h4 {
-    margin: 0 0 10px 0;
-    color: #333;
-}
-
-.filter-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.filter-option input {
-    margin-right: 10px;
-}
-
-.apply-filters {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 8px 15px;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
+    margin: 0 0 10px 0; /* ช่องว่างรอบ ๆ หัวข้อ filter */
+    color: #333; /* สีข้อความของหัวข้อ filter */
 }
 
 /* Map Page Styles */
 .container {
-    display: flex;
-    height: calc(100vh - 56px);
-    margin-top: 56px;
+    display: flex; /* ใช้ Flexbox สำหรับ container */
+    height: calc(100vh - 56px); /* ความสูงของ container ยกเว้น header */
+    margin-top: 56px; /* ปรับตำแหน่งเริ่มต้น */
 }
 
 #map {
-    flex: 2;
-    height: 100%;
-    z-index: 1;
+    flex: 2; /* ใช้ Flexbox โดยให้ map ครอบครองพื้นที่ส่วนใหญ่ */
+    height: 100%; /* ความสูงเต็มที่ */
+    z-index: 1; /* จัดให้ map อยู่ใต้ส่วนอื่น */
 }
 
-.navbar-links {
-    display: flex;
-}
-
-.navbar-link {
-    text-decoration: none;
-    color: white;
-    background-color: #ff5733;
-    padding: 5px 10px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
-}
-
-.navbar-link:hover {
-    background-color: #ff9500;
-    transform: scale(1.05);
-}
-
-.navbar-link:active {
-    background-color: #ff5733;
-    transform: scale(0.98);
-}
-
+/* Sidebar Styles */
 .sidebar {
-    flex: 1;
-    max-width: 350px;
-    background: white;
-    padding: 15px;
-    overflow-y: auto;
-    border-left: 3px solid #ff5733;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    flex: 1; /* กำหนด sidebar ให้มีขนาดที่น้อยกว่า map */
+    max-width: 350px; /* กำหนดความกว้างสูงสุดของ sidebar */
+    background: white; /* สีพื้นหลังของ sidebar */
+    padding: 15px; /* เพิ่ม padding รอบ ๆ sidebar */
+    overflow-y: auto; /* ให้ sidebar เลื่อนในแนวตั้งได้ */
+    border-left: 3px solid #ff5733; /* ขอบด้านซ้ายของ sidebar */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงาด้านขวาของ sidebar */
 }
 
 .sidebar::-webkit-scrollbar {
-    display: none;
+    display: none; /* ซ่อน scrollbar ของ sidebar */
 }
 
+/* Bar Item Styles */
 .bar-item {
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: 0.3s;
-    border-left: 4px solid transparent;
-    margin-bottom: 10px;
+    padding: 15px; /* ขนาด padding ของ item ใน sidebar */
+    background: white; /* สีพื้นหลังของ bar item */
+    border-radius: 8px; /* ทำมุมโค้งให้กับ bar item */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้กับ bar item */
+    cursor: pointer; /* เปลี่ยนเป็น pointer เมื่อเมาส์อยู่บน item */
+    transition: 0.3s; /* เพิ่มการเปลี่ยนแปลงอย่างราบรื่น */
+    border-left: 4px solid transparent; /* ขอบซ้ายโปร่งใสในเริ่มต้น */
+    margin-bottom: 10px; /* ช่องว่างระหว่าง bar item */
 }
 
 .bar-item:hover {
-    background-color: #fff4f2;
-    border-left: 4px solid #ff5733;
+    background-color: #fff4f2; /* สีพื้นหลังเมื่อวางเมาส์บน item */
+    border-left: 4px solid #ff5733; /* ขอบซ้ายเมื่อวางเมาส์บน item */
 }
 
 .bar-item.active {
-    background-color: #fff4f2;
-    border-left: 4px solid #ff5733;
+    background-color: #fff4f2; /* สีพื้นหลังของ item ที่ active */
+    border-left: 4px solid #ff5733; /* ขอบซ้ายของ item ที่ active */
 }
 
 .bar-item strong {
-    font-size: 16px;
-    color: #333;
-    display: block;
-    margin-bottom: 5px;
+    font-size: 16px; /* ขนาดฟอนต์ของชื่อบาร์ */
+    color: #333; /* สีข้อความของชื่อบาร์ */
+    display: block; /* จัดให้ชื่อบาร์แสดงแบบ block */
+    margin-bottom: 5px; /* ช่องว่างด้านล่างของชื่อบาร์ */
 }
 
 .bar-item p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0 10px;
+    font-size: 14px; /* ขนาดฟอนต์ของรายละเอียดบาร์ */
+    color: #666; /* สีข้อความของรายละเอียดบาร์ */
+    margin: 5px 0 10px; /* ช่องว่างรอบ ๆ ข้อความใน bar item */
 }
 
 .bar-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: #888;
+    display: flex; /* ใช้ Flexbox สำหรับแสดงข้อมูลต่าง ๆ */
+    justify-content: space-between; /* จัดข้อมูลให้ห่างกัน */
+    font-size: 13px; /* ขนาดฟอนต์ของ metadata */
+    color: #888; /* สีข้อความของ metadata */
 }
 
 .bar-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 8px;
+    display: flex; /* ใช้ Flexbox เพื่อจัดการกับ tags */
+    flex-wrap: wrap; /* ให้ tags ห่อหุ้มตามความกว้าง */
+    gap: 5px; /* ช่องว่างระหว่าง tags */
+    margin-top: 8px; /* ช่องว่างด้านบนของ tags */
 }
 
 /* CSS สำหรับ user-section */
 .user-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* ใช้ flexbox เพื่อจัดเรียงให้เป็นแถว */
+    align-items: center; /* จัดแนว items ในแกนแนวตั้งให้อยู่ตรงกลาง */
+    gap: 10px; /* ระยะห่างระหว่างแต่ละ item */
 }
 
 .user-section span {
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
+    font-size: 16px; /* ขนาดตัวอักษร */
+    color: white; /* สีของตัวอักษร */
+    font-weight: bold; /* ทำตัวอักษรให้หนา */
 }
 
 .user-section button {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: #ff5733; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีของตัวอักษร */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 25px; /* มุมโค้งของปุ่ม */
+    padding: 10px 20px; /* ช่องว่างภายในปุ่ม */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ทำตัวอักษรให้หนา */
+    cursor: pointer; /* แสดง cursor แบบ pointer เมื่อวางเมาส์บนปุ่ม */
+    transition: background-color 0.3s, transform 0.3s; /* การเปลี่ยนแปลงเมื่อมีการโต้ตอบ */
 }
 
 .user-section button:hover {
-    background-color: #ff9500;
-    transform: scale(1.05);
+    background-color: #ff9500; /* สีพื้นหลังของปุ่มเมื่อ hover */
+    transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อ hover */
 }
 
 .user-section button:active {
-    background-color: #ff5733;
-    transform: scale(0.98);
+    background-color: #ff5733; /* สีพื้นหลังเมื่อคลิก */
+    transform: scale(0.98); /* หดตัวเล็กน้อยเมื่อคลิก */
 }
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 4000;
+    display: none; /* ซ่อน modal เริ่มต้น */
+    position: fixed; /* วาง modal แบบคงที่ */
+    z-index: 4000; /* วาง modal ไว้ด้านบนสุด */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* ฉากหลังโปร่งแสง */
+    justify-content: center; /* จัดเรียง modal ให้อยู่ตรงกลาง */
+    align-items: center; /* จัดเรียงแนวตั้งตรงกลาง */
 }
 
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
+    background-color: white; /* สีพื้นหลังของเนื้อหาภายใน modal */
+    padding: 20px; /* ช่องว่างภายใน */
+    border-radius: 8px; /* มุมโค้งของกล่อง */
     width: 90%;
-    max-width: 400px;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px; /* กำหนดความกว้างสูงสุด */
+    position: relative; /* ใช้ position แบบ relative เพื่อวางปุ่ม close */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* เงาให้กับกล่อง */
 }
 
 .modal-close {
-    position: absolute;
+    position: absolute; /* วางปุ่มปิดอยู่ตำแหน่งที่ต้องการ */
     top: 10px;
     right: 15px;
     font-size: 24px;
-    cursor: pointer;
-    color: #333;
+    cursor: pointer; /* แสดง cursor แบบ pointer เมื่อวางเมาส์บนปุ่ม */
+    color: #333; /* สีของปุ่มปิด */
 }
 
 .modal-content h3 {
-    margin: 0 0 15px;
-    font-size: 18px;
-    color: #ff5733;
+    margin: 0 0 15px; /* การจัดระยะห่างจากด้านบน */
+    font-size: 18px; /* ขนาดตัวอักษรหัวข้อ */
+    color: #ff5733; /* สีของหัวข้อ */
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* ระยะห่างระหว่างกลุ่มฟอร์ม */
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+    display: block; /* ให้ label เป็นบล็อกเพื่อแสดงในบรรทัดใหม่ */
+    margin-bottom: 5px; /* ระยะห่างจาก input */
+    font-weight: bold; /* ทำตัวอักษรให้หนา */
+    color: #333; /* สีของ label */
 }
 
 .form-group input,
 .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    width: 100%; /* ให้ input และ select กว้างเต็ม */
+    padding: 8px; /* ช่องว่างภายใน */
+    border: 1px solid #ccc; /* ขอบสีเทา */
+    border-radius: 4px; /* มุมโค้ง */
+    font-size: 14px; /* ขนาดตัวอักษร */
 }
 
 .form-group select {
-    background-color: white;
-    cursor: pointer;
+    background-color: white; /* พื้นหลังของ select */
+    cursor: pointer; /* แสดง cursor แบบ pointer เมื่อวางเมาส์ */
 }
 
 .form-group select:focus,
 .form-group input:focus {
-    outline: none;
-    border-color: #ff5733;
+    outline: none; /* ลบเส้นขอบรอบๆ เมื่อ focus */
+    border-color: #ff5733; /* เปลี่ยนสีขอบเป็นสีที่กำหนดเมื่อ focus */
 }
 
 .submit-button {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #ff5733; /* สีพื้นหลังของปุ่มส่งข้อมูล */
+    color: white; /* สีตัวอักษร */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 4px; /* มุมโค้ง */
+    padding: 10px; /* ช่องว่างภายใน */
+    width: 100%; /* กว้างเต็ม */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    cursor: pointer; /* แสดง cursor แบบ pointer เมื่อวางเมาส์ */
+    transition: background-color 0.3s; /* การเปลี่ยนแปลงสีพื้นหลัง */
 }
 
 .submit-button:hover {
-    background-color: #e04e2d;
+    background-color: #e04e2d; /* สีพื้นหลังเมื่อ hover */
 }
 
 .tag {
-    background-color: #f0f0f0;
-    color: #666;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 12px;
+    background-color: #f0f0f0; /* พื้นหลังของ tag */
+    color: #666; /* สีตัวอักษร */
+    padding: 2px 8px; /* ช่องว่างภายใน */
+    border-radius: 10px; /* มุมโค้ง */
+    font-size: 12px; /* ขนาดตัวอักษร */
 }
 
 .ratings {
-    color: #ffc107;
+    color: #ffc107; /* สีของ rating */
 }
+
 
 /* ลบสไตล์ custom-marker เพราะไม่ใช้หมุดวงกลมอีกต่อไป */
 .popup-content {
-    padding: 5px;
-    max-width: 250px;
-    z-index: 1500;
+    padding: 5px; /* เพิ่มช่องว่างรอบๆ เนื้อหาภายใน popup */
+    max-width: 250px; /* จำกัดความกว้างสูงสุดของ popup */
+    z-index: 1500; /* กำหนดลำดับการวางเหนือ element อื่น */
 }
 
 .popup-content h3 {
-    margin: 0 0 5px 0;
-    color: #ff5733;
+    margin: 0 0 5px 0; /* ระยะห่างด้านบนและด้านล่างของ h3 */
+    color: #ff5733; /* สีของตัวอักษรในหัวข้อ */
 }
 
 .popup-content p {
-    margin: 5px 0;
+    margin: 5px 0; /* ระยะห่างด้านบนและล่างของข้อความ */
 }
 
 .popup-image {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 8px;
+    width: 100%; /* ให้ภาพกว้างเต็มของพื้นที่ที่จัดให้ */
+    height: 120px; /* กำหนดความสูงของภาพ */
+    object-fit: cover; /* ครอบภาพให้เต็มพื้นที่โดยไม่เสียสัดส่วน */
+    border-radius: 4px; /* มุมโค้งของภาพ */
+    margin-bottom: 8px; /* ระยะห่างด้านล่างของภาพ */
 }
 
 .popup-footer {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    display: flex; /* ใช้ Flexbox สำหรับจัดการ layout ของ footer */
+    justify-content: space-between; /* จัดให้ไอเทมอยู่ห่างกันสุดขอบ */
+    margin-top: 10px; /* ระยะห่างจากด้านบน */
 }
 
 .popup-button {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 12px;
-    cursor: pointer;
+    background-color: #ff5733; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีของตัวอักษร */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 4px; /* มุมโค้ง */
+    padding: 5px 10px; /* ช่องว่างภายในปุ่ม */
+    font-size: 12px; /* ขนาดตัวอักษร */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อวางเมาส์ */
 }
 
 .legend {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 400;
+    position: absolute; /* วางตำแหน่งแบบคงที่ */
+    bottom: 20px; /* ระยะห่างจากขอบล่าง */
+    left: 20px; /* ระยะห่างจากขอบซ้าย */
+    background: white; /* พื้นหลังของ legend */
+    padding: 10px; /* ช่องว่างภายใน */
+    border-radius: 8px; /* มุมโค้ง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เงาให้กับ legend */
+    z-index: 400; /* จัดลำดับให้ legend อยู่บนสุด */
 }
 
 .legend h4 {
-    margin: 0 0 10px 0;
-    color: #ff5733;
-    font-size: 14px;
+    margin: 0 0 10px 0; /* ระยะห่างของหัวข้อ */
+    color: #ff5733; /* สีของหัวข้อ */
+    font-size: 14px; /* ขนาดตัวอักษร */
 }
 
 .legend-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
+    display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่งให้กับ legend items */
+    align-items: center; /* จัดให้อยู่แนวกลางแนวตั้ง */
+    margin-bottom: 5px; /* ระยะห่างจากไอเทมอื่นๆ */
 }
 
 .legend-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    width: 20px; /* ขนาดของไอคอน */
+    height: 20px; /* ขนาดของไอคอน */
+    margin-right: 8px; /* ระยะห่างจากไอเทมถัดไป */
 }
 
 #photoGallery {
-    position: fixed;
+    position: fixed; /* วาง gallery แบบคงที่ */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
+    width: 100%; /* กว้างเต็มหน้าจอ */
+    height: 100%; /* สูงเต็มหน้าจอ */
+    background-color: rgba(0, 0, 0, 0.9); /* พื้นหลังมืด */
+    display: none; /* ซ่อน gallery เริ่มต้น */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    align-items: center; /* จัดให้อยู่แนวกลางแนวตั้ง */
+    z-index: 10000; /* จัดลำดับให้ gallery อยู่เหนือ element อื่น */
 }
 
 .gallery-content {
-    max-width: 80%;
-    max-height: 80%;
-    position: relative;
+    max-width: 80%; /* ความกว้างสูงสุดของเนื้อหาภายใน */
+    max-height: 80%; /* ความสูงสูงสุดของเนื้อหาภายใน */
+    position: relative; /* ใช้ position แบบ relative เพื่อวางปุ่มต่างๆ */
 }
 
 .gallery-image {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 4px;
+    max-width: 100%; /* กำหนดให้ภาพกว้างเต็มพื้นที่ */
+    max-height: 80vh; /* ความสูงสูงสุดของภาพ */
+    border-radius: 4px; /* มุมโค้ง */
 }
 
 .gallery-close {
-    position: absolute;
+    position: absolute; /* วางปุ่มปิดในตำแหน่งคงที่ */
     top: -40px;
     right: 0;
     color: white;
     font-size: 30px;
-    cursor: pointer;
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อวางเมาส์ */
 }
 
 .gallery-controls {
-    position: absolute;
-    bottom: -40px;
+    position: absolute; /* วางตำแหน่งแบบคงที่ */
+    bottom: -40px; /* ระยะห่างจากด้านล่าง */
     width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่งของปุ่มควบคุม */
+    justify-content: center; /* จัดปุ่มให้อยู่กลาง */
+    gap: 20px; /* ระยะห่างระหว่างปุ่ม */
 }
 
 .gallery-control {
     color: white;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2); /* พื้นหลังโปร่งแสง */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 50%; /* รูปทรงวงกลม */
+    width: 40px; /* ขนาดปุ่ม */
+    height: 40px; /* ขนาดปุ่ม */
+    display: flex; /* ใช้ Flexbox เพื่อจัดตำแหน่ง */
+    justify-content: center; /* จัดปุ่มให้อยู่กลาง */
+    align-items: center; /* จัดปุ่มให้อยู่กลางแนวตั้ง */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อวางเมาส์ */
 }
 
 .user-location-button {
-    position: absolute;
+    position: absolute; /* วางปุ่มให้คงที่ */
     left: 10px;
-    top: 150px;
-    background: white;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 500;
-    cursor: pointer;
+    top: 150px; /* ตำแหน่งแนวตั้ง */
+    background: white; /* พื้นหลังของปุ่ม */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 50%; /* รูปทรงวงกลม */
+    width: 40px; /* ขนาดปุ่ม */
+    height: 40px; /* ขนาดปุ่ม */
+    display: flex; /* ใช้ Flexbox เพื่อจัดปุ่ม */
+    justify-content: center; /* จัดปุ่มให้อยู่กลาง */
+    align-items: center; /* จัดปุ่มให้อยู่กลางแนวตั้ง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เงาให้กับปุ่ม */
+    z-index: 500; /* กำหนดลำดับการวาง */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อวางเมาส์ */
 }
 
 /* Shared Styles */
 .loading-overlay {
-    position: fixed;
+    position: fixed; /* วาง overlay แบบคงที่ */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    height: 100%; /* ครอบคลุมหน้าจอ */
+    background-color: rgba(255, 255, 255, 0.8); /* พื้นหลังโปร่งแสง */
+    display: flex; /* ใช้ Flexbox เพื่อจัดกลาง */
+    justify-content: center; /* จัดให้อยู่กลาง */
+    align-items: center; /* จัดให้อยู่กลางแนวตั้ง */
+    z-index: 9999; /* จัดลำดับให้ overlay อยู่บนสุด */
 }
 
 .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #ff5733;
-    animation: spin 1s linear infinite;
+    width: 50px; /* ขนาดของ spinner */
+    height: 50px; /* ขนาดของ spinner */
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    border: 5px solid #f3f3f3; /* ขอบสีเทา */
+    border-top: 5px solid #ff5733; /* ขอบด้านบนสีส้ม */
+    animation: spin 1s linear infinite; /* การหมุนอย่างต่อเนื่อง */
 }
 
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); } /* เริ่มต้นที่การหมุนที่ 0 องศา */
+    100% { transform: rotate(360deg); } /* หมุนไปที่ 360 องศา */
 }
 
 .notification {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background-color: #ff5733;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    transform: translateX(120%);
+    position: fixed; /* วางตำแหน่งแบบคงที่ที่มุมขวาบน */
+    top: 80px; /* ระยะห่างจากขอบบน 80px */
+    right: 20px; /* ระยะห่างจากขอบขวา 20px */
+    background-color: #ff5733; /* พื้นหลังสีส้ม */
+    color: white; /* ตัวอักษรสีขาว */
+    padding: 10px 20px; /* ช่องว่างภายใน 10px ด้านบนและล่าง, 20px ด้านซ้ายและขวา */
+    border-radius: 4px; /* มุมโค้งที่ขอบ */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เงาจากด้านล่าง */
+    z-index: 1000; /* ให้ notification อยู่ด้านหน้าสุด */
+    transition: all 0.3s ease; /* การเปลี่ยนแปลงที่เรียบเนียน 0.3 วินาที */
+    transform: translateX(120%); /* เริ่มต้นที่การซ่อนที่ด้านขวานอกหน้าจอ */
 }
 
 .notification.show {
-    transform: translateX(0);
+    transform: translateX(0); /* เมื่อแสดง notification จะถูกเลื่อนมาที่ตำแหน่งปกติ */
 }
 
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
+        flex-direction: column; /* เมื่อหน้าจอเล็กลง (เช่น บนอุปกรณ์มือถือ) จะเปลี่ยน layout เป็นแนวตั้ง */
     }
 
     .sidebar {
-        max-width: 100%;
-        height: 200px;
-        border-left: none;
-        border-top: 3px solid #ff5733;
-        display: block;
+        max-width: 100%; /* ให้ sidebar กว้างเต็มหน้าจอ */
+        height: 200px; /* ความสูง 200px */
+        border-left: none; /* ไม่มีขอบซ้าย */
+        border-top: 3px solid #ff5733; /* ขอบด้านบนสีส้ม */
+        display: block; /* แสดงเป็น block */
     }
 
     #map {
-        height: calc(100vh - 256px);
+        height: calc(100vh - 256px); /* ความสูงของแผนที่จะเป็นความสูงเต็มของหน้าจอลบ 256px */
     }
 
     .header {
-        flex-direction: column;
-        padding: 10px;
+        flex-direction: column; /* จัด header เป็นแนวตั้ง */
+        padding: 10px; /* ช่องว่างภายใน header */
     }
 
     .header-controls {
-        margin-top: 10px;
-        width: 100%;
-        justify-content: space-between;
+        margin-top: 10px; /* ระยะห่างจากด้านบนของ header controls */
+        width: 100%; /* ให้กว้างเต็ม 100% */
+        justify-content: space-between; /* จัดปุ่มใน header controls ให้ห่างกันสุดขอบ */
     }
 
     #searchInput {
-        width: 150px;
+        width: 150px; /* กำหนดความกว้างของ input สำหรับค้นหา */
     }
 }

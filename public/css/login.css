@@ -2,79 +2,79 @@
 
 /* ปรับพื้นหลังของหน้า login */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Arial', sans-serif; /* ใช้ฟอนต์ Arial */
+    background-color: #f4f4f9; /* พื้นหลังสีเทาอ่อน */
+    margin: 0; /* กำหนดระยะห่างด้านนอกเป็น 0 */
+    padding: 0; /* กำหนดช่องว่างภายในเป็น 0 */
+    display: flex; /* ใช้ flexbox เพื่อจัดตำแหน่ง */
+    justify-content: center; /* จัดตำแหน่งเนื้อหาตรงกลางในแนวนอน */
+    align-items: center; /* จัดตำแหน่งเนื้อหาตรงกลางในแนวตั้ง */
+    height: 100vh; /* ให้ความสูงของหน้าเป็น 100% ของหน้าจอ */
 }
 
 /* กล่องล็อคอิน */
 .login-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    background-color: #ffffff; /* พื้นหลังของกล่องเป็นสีขาว */
+    padding: 30px; /* ช่องว่างภายในกล่อง 30px */
+    border-radius: 8px; /* มุมโค้งที่ขอบกล่อง */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของกล่อง */
+    width: 100%; /* กำหนดความกว้างเต็ม */
+    max-width: 400px; /* ความกว้างสูงสุด 400px */
 }
 
 /* ชื่อหัวข้อ */
 .login-container h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
+    text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
+    color: #333; /* สีตัวอักษรเข้ม */
+    margin-bottom: 20px; /* ระยะห่างด้านล่าง 20px */
 }
 
 /* ฟอร์มการล็อคอิน */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* ระยะห่างด้านล่างของฟอร์มแต่ละกลุ่ม */
 }
 
 label {
-    font-size: 14px;
-    color: #333;
+    font-size: 14px; /* ขนาดตัวอักษรของ label */
+    color: #333; /* สีตัวอักษรเข้ม */
 }
 
 input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    margin-top: 5px;
+    width: 100%; /* กำหนดความกว้างเต็ม */
+    padding: 10px; /* ช่องว่างภายใน 10px */
+    border: 1px solid #ccc; /* ขอบสีเทา */
+    border-radius: 4px; /* มุมโค้งที่ขอบ */
+    font-size: 16px; /* ขนาดตัวอักษร 16px */
+    margin-top: 5px; /* ระยะห่างจากบน 5px */
 }
 
 /* ปุ่มล็อคอิน */
 button[type="submit"] {
-    width: 100%;
-    padding: 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 100%; /* กำหนดความกว้างเต็ม */
+    padding: 12px; /* ช่องว่างภายใน 12px */
+    background-color: #4CAF50; /* พื้นหลังของปุ่มเป็นสีเขียว */
+    color: white; /* สีตัวอักษรขาว */
+    border: none; /* ไม่มีขอบ */
+    border-radius: 4px; /* มุมโค้งที่ขอบ */
+    font-size: 16px; /* ขนาดตัวอักษร 16px */
+    cursor: pointer; /* แสดง pointer เมื่อวางเมาส์บนปุ่ม */
+    transition: background-color 0.3s ease; /* การเปลี่ยนแปลงพื้นหลังของปุ่มเมื่อ hover */
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* เมื่อ hover เปลี่ยนพื้นหลังเป็นสีเขียวเข้ม */
 }
 
 /* ลิงก์สำหรับสมัครสมาชิก */
 .register-link {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    color: #007bff;
-    font-size: 14px;
-    text-decoration: none;
+    display: block; /* ทำให้ลิงก์เป็น block */
+    text-align: center; /* จัดลิงก์ให้อยู่กลาง */
+    margin-top: 15px; /* ระยะห่างจากด้านบน 15px */
+    color: #007bff; /* สีของลิงก์เป็นสีน้ำเงิน */
+    font-size: 14px; /* ขนาดตัวอักษร 14px */
+    text-decoration: none; /* ไม่มีขีดเส้นใต้ */
 }
 
 .register-link:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* เมื่อ hover ให้แสดงขีดเส้นใต้ */
 }

@@ -1,566 +1,572 @@
+/* สไตล์ของ body */
 body {
-    font-family: 'Prompt', 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    overflow-y: auto; /* ยังให้เลื่อนได้ */
+    font-family: 'Prompt', 'Arial', sans-serif; /* กำหนดฟอนต์ */
+    margin: 0; /* ลบ margin จาก body */
+    padding: 0; /* ลบ padding จาก body*/
+    background-color: #f4f4f4; /* กำหนดสีพื้นหลัง */
+    overflow-y: auto; /* เปิดใช้งานการเลื่อนหน้า */
 }
+
 /* ซ่อนแถบเลื่อนใน Webkit (Chrome, Safari) */
 body::-webkit-scrollbar {
     display: none;
 }
 
-/* ปุ่มล็อคอินและสมัคร */
+/* สไตล์ของลิงค์ใน Navbar */
 .navbar-links {
-    display: flex;
+    display: flex; /* ใช้ Flexbox */
 }
 
 .navbar-link {
-    text-decoration: none;
-    color: white;
-    background-color: #ff5733;
-    padding: 10px 30px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.3s;
-    display: inline-block;
+    text-decoration: none; /* ไม่ให้มีขีดเส้นใต้ */
+    color: white; /* กำหนดสีตัวอักษร */
+    background-color: #ff5733; /* กำหนดสีพื้นหลัง */
+    padding: 10px 30px; /* เพิ่มระยะห่างภายใน */
+    border-radius: 25px; /* ทำมุมให้กลม */
+    font-size: 16px; /* กำหนดขนาดฟอนต์ */
+    font-weight: bold; /* ทำให้ตัวอักษรหนา */
+    transition: background-color 0.3s, transform 0.3s; /* เพิ่มการเปลี่ยนแปลงเมื่อมีการโฮเวอร์ */
+    display: inline-block; /* แสดงเป็นบล็อกอินไลน์ */
 }
 
 .navbar-link:hover {
-    background-color: #ff9500;
-    transform: scale(1.05);
+    background-color: #ff9500; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    transform: scale(1.05); /* ขยายขนาดเมื่อโฮเวอร์ */
 }
 
 .navbar-link:active {
-    background-color: #ff5733;
-    transform: scale(0.98);
+    background-color: #ff5733; /* เปลี่ยนสีเมื่อคลิก */
+    transform: scale(0.98); /* ย่อลงเล็กน้อยเมื่อคลิก */
 }
 
+/* สไตล์ของ header */
 .header {
-    background-color: #ff5733;
-    color: white;
-    padding: 10px 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    background-color: #ff5733; /* กำหนดสีพื้นหลัง */
+    color: white; /* กำหนดสีตัวอักษร */
+    padding: 10px 5px; /* เพิ่มระยะห่างภายใน */
+    display: flex; /* ใช้ Flexbox */
+    justify-content: space-between; /* จัดตำแหน่งให้กระจาย */
+    align-items: center; /* จัดแนวกลางในแกนตั้ง */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้กับ header */
+    position: fixed; /* ทำให้ header อยู่ที่ตำแหน่งคงที่ */
+    width: 100%; /* ทำให้กว้างเต็มหน้าจอ */
+    top: 0; /* อยู่ที่ด้านบนสุด */
+    z-index: 1000; /* ตั้งค่า z-index ให้อยู่บนสุด */
 }
 
 .header h1 {
-    margin: 0;
-    font-size: 24px;
+    margin: 0; /* เอามาร์จิ้นออก */
+    font-size: 24px; /* กำหนดขนาดฟอนต์ */
 }
 
-/* Header Controls */
+/* สไตล์ของการควบคุมใน header */
 .header-controls {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดแนวกลางในแกนตั้ง */
+    gap: 15px; /* เพิ่มช่องว่างระหว่างไอเท็ม */
 }
 
-/* Search Container */
+/* สไตล์ของกล่องค้นหา */
 .search-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+    position: relative; /* กำหนดตำแหน่งให้เป็น relative */
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดแนวกลางในแกนตั้ง */
 }
 
 .search-container input {
-    width: 200px;
-    padding: 8px 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.3s;
+    width: 200px; /* กำหนดความกว้าง */
+    padding: 8px 15px; /* เพิ่มระยะห่างภายใน */
+    border: 1px solid #ccc; /* ขอบสีเทา */
+    border-radius: 25px; /* ทำมุมให้กลม */
+    font-size: 14px; /* ขนาดฟอนต์ */
+    outline: none; /* เอาขอบของ input ออก */
+    transition: border-color 0.3s; /* เพิ่มการเปลี่ยนแปลงเมื่อโฟกัส */
 }
 
 .search-container input:focus {
-    border-color: #ff9500;
+    border-color: #ff9500; /* เปลี่ยนสีขอบเมื่อโฟกัส */
 }
 
-/* Autocomplete Suggestions */
+/* สไตล์ของรายการแนะนำใน autocomplete */
 .autocomplete-suggestions {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-    display: none;
+    position: absolute; /* กำหนดตำแหน่งให้เป็น absolute */
+    top: 100%; /* อยู่ด้านล่างของ input */
+    left: 0; /* ชิดขอบซ้าย */
+    right: 0; /* ชิดขอบขวา */
+    background-color: white; /* สีพื้นหลัง */
+    border: 1px solid #ccc; /* ขอบสีเทา */
+    border-radius: 8px; /* ทำมุมให้กลม */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+    max-height: 200px; /* ความสูงสูงสุด */
+    overflow-y: auto; /* ให้เลื่อนในแนวตั้ง */
+    z-index: 1000; /* ตั้งค่า z-index ให้อยู่บนสุด */
+    display: none; /* ซ่อนรายการแนะนำ */
 }
 
 .autocomplete-suggestions.show {
-    display: block;
+    display: block; /* แสดงรายการเมื่อมีคลาส 'show' */
 }
 
 .autocomplete-suggestions .suggestion-item {
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 14px;
-    color: #333;
-    transition: background-color 0.3s;
+    padding: 10px 15px; /* เพิ่มระยะห่างภายใน */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
+    font-size: 14px; /* ขนาดฟอนต์ */
+    color: #333; /* สีตัวอักษร */
+    transition: background-color 0.3s; /* เพิ่มการเปลี่ยนแปลงเมื่อโฮเวอร์ */
 }
 
 .autocomplete-suggestions .suggestion-item:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
 }
 
-/* CSS สำหรับ user-section */
+/* สไตล์สำหรับส่วนของผู้ใช้ */
 .user-section {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    display: flex; /* ใช้ Flexbox */
+    align-items: center; /* จัดแนวกลางในแกนตั้ง */
+    gap: 10px; /* เพิ่มช่องว่างระหว่างไอเท็ม */
 }
 
 .user-section span {
-    font-size: 16px;
-    color: white;
-    font-weight: bold;
+    font-size: 16px; /* ขนาดฟอนต์ */
+    color: white; /* สีตัวอักษร */
+    font-weight: bold; /* ตัวอักษรหนา */
 }
 
 .user-section button {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: #ff5733; /* สีพื้นหลัง */
+    color: white; /* สีตัวอักษร */
+    border: none; /* เอาขอบออก */
+    border-radius: 25px; /* ทำมุมให้กลม */
+    padding: 10px 20px; /* เพิ่มระยะห่างภายใน */
+    font-size: 16px; /* ขนาดฟอนต์ */
+    font-weight: bold; /* ตัวอักษรหนา */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เป็นปุ่ม */
+    transition: background-color 0.3s, transform 0.3s; /* เพิ่มการเปลี่ยนแปลงเมื่อโฮเวอร์ */
 }
 
 .user-section button:hover {
-    background-color: #ff9500;
-    transform: scale(1.05);
+    background-color: #ff9500; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    transform: scale(1.05); /* ขยายขนาดเมื่อโฮเวอร์ */
 }
 
 .user-section button:active {
-    background-color: #ff5733;
-    transform: scale(0.98);
+    background-color: #ff5733; /* เปลี่ยนสีเมื่อคลิก */
+    transform: scale(0.98); /* ย่อลงเมื่อคลิก */
 }
+
 
 /* Hero Section */
 .hero-section {
-    position: relative;
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    margin-top: 56px;
+    position: relative; /* ทำให้สามารถวางเนื้อหาภายในเป็น relative และใช้การจัดการตำแหน่งแบบ absolute ภายใน */
+    height: 100vh; /* ทำให้ section นี้เต็มขนาดหน้าจอ (viewport height) */
+    background: url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover; /* กำหนดภาพพื้นหลังจาก URL ที่ให้ไว้, ตั้งค่าไม่ให้ซ้ำ, กำหนดตำแหน่งและขนาด */
+    display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของเนื้อหา */
+    justify-content: center; /* จัดกลางเนื้อหาภายในแนวนอน */
+    align-items: center; /* จัดกลางเนื้อหาภายในแนวตั้ง */
+    text-align: center; /* จัดตำแหน่งข้อความให้อยู่กลาง */
+    color: white; /* เปลี่ยนสีข้อความให้เป็นสีขาว */
+    margin-top: 56px; /* เพิ่มช่องว่างด้านบนให้กับ Hero Section */
 }
 
 .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    position: absolute; /* ทำให้ overlay อยู่เหนือเนื้อหาของ hero section */
+    top: 0; /* เริ่มจากตำแหน่งด้านบน */
+    left: 0; /* เริ่มจากตำแหน่งด้านซ้าย */
+    width: 100%; /* กำหนดความกว้างให้ครอบคลุมทั้งหมด */
+    height: 100%; /* กำหนดความสูงให้ครอบคลุมทั้งหมด */
+    background: rgba(0, 0, 0, 0.5); /* ใช้สีดำทึบกับความโปร่งใส 50% เพื่อให้พื้นหลังไม่เด่นมาก */
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    position: relative; /* เนื้อหาภายในจะอยู่เหนือ overlay */
+    z-index: 1; /* ทำให้เนื้อหาปรากฏอยู่เหนือ overlay */
 }
 
 .hero-content h2 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 48px; /* ขนาดฟอนต์สำหรับหัวข้อ */
+    margin-bottom: 20px; /* เพิ่มช่องว่างใต้หัวข้อ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความ */
 }
 
 .hero-content p {
-    font-size: 20px;
-    margin-bottom: 30px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    font-size: 20px; /* ขนาดฟอนต์สำหรับข้อความ */
+    margin-bottom: 30px; /* เพิ่มช่องว่างใต้ข้อความ */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้ข้อความ */
 }
 
 .hero-button {
-    background-color: #ff9500;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #ff9500; /* สีพื้นหลังปุ่ม */
+    color: white; /* สีข้อความปุ่ม */
+    border: none; /* ลบขอบ */
+    border-radius: 25px; /* ทำมุมของปุ่มให้โค้ง */
+    padding: 15px 30px; /* กำหนดขนาด padding ให้พอดีกับปุ่ม */
+    font-size: 18px; /* ขนาดฟอนต์ */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อ hover */
+    transition: background-color 0.3s; /* เพิ่ม transition เมื่อเปลี่ยนสีพื้นหลัง */
 }
 
 .hero-button:hover {
-    background-color: #ff5733;
+    background-color: #ff5733; /* สีพื้นหลังเมื่อ hover */
 }
 
 /* Modal Styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 4000;
+    display: none; /* ซ่อน modal เริ่มต้น */
+    position: fixed; /* ทำให้ modal อยู่ในตำแหน่งคงที่ */
+    z-index: 4000; /* เพิ่มค่า z-index เพื่อให้ modal อยู่ด้านบน */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5); /* ใช้สีพื้นหลังที่ทึบเล็กน้อย */
+    justify-content: center; /* จัดตำแหน่งเนื้อหาภายใน modal ให้อยู่กลาง */
+    align-items: center; /* จัดตำแหน่งเนื้อหาภายใน modal ให้อยู่กลาง */
 }
 
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: white; /* สีพื้นหลังของเนื้อหาภายใน modal */
+    padding: 20px; /* ช่องว่างรอบๆ เนื้อหา */
+    border-radius: 8px; /* มุมโค้งของกล่อง */
+    width: 90%; /* กำหนดความกว้างของ modal */
+    max-width: 400px; /* กำหนดความกว้างสูงสุด */
+    position: relative; /* กำหนดตำแหน่ง relative เพื่อใช้งานกับตำแหน่งอื่น ๆ ภายใน */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* เงารอบ ๆ กล่อง */
 }
 
 .modal-close {
-    position: absolute;
+    position: absolute; /* ปุ่มปิด modal จะอยู่ในตำแหน่ง absolute */
     top: 10px;
     right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #333;
+    font-size: 24px; /* ขนาดฟอนต์ของปุ่มปิด */
+    cursor: pointer; /* เปลี่ยน cursor เมื่อ hover */
+    color: #333; /* สีของปุ่มปิด */
 }
 
 .modal-content h3 {
-    margin: 0 0 15px;
-    font-size: 18px;
-    color: #ff5733;
+    margin: 0 0 15px; /* เพิ่มช่องว่างใต้หัวข้อ */
+    font-size: 18px; /* ขนาดฟอนต์ของหัวข้อ */
+    color: #ff5733; /* สีของข้อความ */
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* เพิ่มช่องว่างด้านล่างของแต่ละฟอร์ม */
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
+    display: block; /* แสดง label เป็น block */
+    margin-bottom: 5px; /* เพิ่มช่องว่างใต้ label */
+    font-weight: bold; /* ทำให้ข้อความของ label ตัวหนา */
+    color: #333; /* สีของ label */
 }
 
 .form-group input,
 .form-group select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    width: 100%; /* กำหนดความกว้างให้เต็มฟอร์ม */
+    padding: 8px; /* เพิ่มช่องว่างภายในช่อง input */
+    border: 1px solid #ccc; /* กำหนดขอบเป็นสีเทาอ่อน */
+    border-radius: 4px; /* ทำมุมของ input ให้โค้ง */
+    font-size: 14px; /* ขนาดฟอนต์ */
 }
 
 .form-group select {
-    background-color: white;
-    cursor: pointer;
+    background-color: white; /* สีพื้นหลังของ select */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer */
 }
 
 .form-group select:focus,
 .form-group input:focus {
-    outline: none;
-    border-color: #ff5733;
+    outline: none; /* ลบเส้นกรอบเมื่อ focus */
+    border-color: #ff5733; /* เปลี่ยนสีขอบเป็นสีที่เลือกเมื่อ focus */
 }
 
 .submit-button {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    width: 100%;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #ff5733; /* สีพื้นหลังของปุ่ม submit */
+    color: white; /* สีข้อความ */
+    border: none; /* ลบขอบ */
+    border-radius: 4px; /* ทำมุมของปุ่มให้โค้ง */
+    padding: 10px; /* ช่องว่างภายในปุ่ม */
+    width: 100%; /* ปุ่มขยายเต็มความกว้าง */
+    font-size: 16px; /* ขนาดฟอนต์ */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer */
+    transition: background-color 0.3s; /* เพิ่ม transition เมื่อเปลี่ยนสีพื้นหลัง */
 }
 
 .submit-button:hover {
-    background-color: #e04e2d;
+    background-color: #e04e2d; /* สีพื้นหลังเมื่อ hover */
 }
+
 
 /* Action Buttons */
 .action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งปุ่ม */
+    justify-content: center; /* จัดตำแหน่งปุ่มให้อยู่กลาง */
+    gap: 20px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+    padding: 20px; /* เพิ่ม padding รอบ ๆ */
+    background: #fff; /* สีพื้นหลังเป็นสีขาว */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อยให้กับกล่อง */
 }
 
 .action-button {
-    background-color: #ff5733;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    background-color: #ff5733; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีของข้อความในปุ่ม */
+    border: none; /* ลบขอบปุ่ม */
+    border-radius: 25px; /* ทำมุมของปุ่มให้โค้ง */
+    padding: 12px 25px; /* กำหนดขนาด padding */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อ hover */
+    display: flex; /* ใช้ Flexbox ภายในปุ่ม */
+    align-items: center; /* จัดตำแหน่งให้ข้อความในปุ่มอยู่กลาง */
+    font-weight: bold; /* ทำให้ข้อความในปุ่มตัวหนา */
+    font-size: 16px; /* ขนาดฟอนต์ */
+    transition: background-color 0.3s; /* เพิ่ม transition เมื่อเปลี่ยนสีพื้นหลัง */
 }
 
 .action-button:hover {
-    background-color: #ff9500;
+    background-color: #ff9500; /* สีพื้นหลังเมื่อ hover */
 }
 
 .action-button i {
-    margin-right: 8px;
+    margin-right: 8px; /* เพิ่มช่องว่างด้านขวาของไอคอน */
 }
 
 /* Wheel Section */
 .wheel-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    background: #f9f9f9;
+    display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของส่วนนี้ */
+    flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+    align-items: center; /* จัดตำแหน่งให้อยู่กลาง */
+    padding: 40px 20px; /* เพิ่ม padding รอบ ๆ */
+    background: #f9f9f9; /* สีพื้นหลังของส่วนนี้ */
 }
 
 .wheel-container h3 {
-    font-size: 24px;
-    color: #ff5733;
-    margin-bottom: 20px;
+    font-size: 24px; /* ขนาดฟอนต์ */
+    color: #ff5733; /* สีข้อความ */
+    margin-bottom: 20px; /* เพิ่มช่องว่างด้านล่างของหัวข้อ */
 }
 
 .wheel-container iframe {
-    max-width: 100%;
-    border: none;
+    max-width: 100%; /* จำกัดขนาด iframe ให้มีความกว้างสูงสุด 100% */
+    border: none; /* ลบขอบของ iframe */
 }
 
 .close-wheel-button {
-    background-color: #ff9500;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 25px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    background-color: #ff9500; /* สีพื้นหลังของปุ่ม */
+    color: white; /* สีของข้อความในปุ่ม */
+    border: none; /* ลบขอบปุ่ม */
+    border-radius: 25px; /* ทำมุมของปุ่มให้โค้ง */
+    padding: 12px 25px; /* กำหนดขนาด padding */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อ hover */
+    font-weight: bold; /* ทำให้ข้อความในปุ่มตัวหนา */
+    margin-top: 20px; /* เพิ่มช่องว่างด้านบนของปุ่ม */
+    transition: background-color 0.3s; /* เพิ่ม transition เมื่อเปลี่ยนสีพื้นหลัง */
 }
 
 .close-wheel-button:hover {
-    background-color: #ff5733;
+    background-color: #ff5733; /* สีพื้นหลังเมื่อ hover */
 }
 
 /* Popular Bars Section */
 .popular-section {
-    padding: 40px 20px;
-    background: #fff;
+    padding: 40px 20px; /* เพิ่ม padding รอบ ๆ */
+    background: #fff; /* สีพื้นหลัง */
 }
 
 .popular-section h3 {
-    text-align: center;
-    color: #ff5733;
-    font-size: 28px;
-    margin-bottom: 30px;
+    text-align: center; /* จัดตำแหน่งข้อความให้ตรงกลาง */
+    color: #ff5733; /* สีข้อความ */
+    font-size: 28px; /* ขนาดฟอนต์ */
+    margin-bottom: 30px; /* เพิ่มช่องว่างใต้หัวข้อ */
 }
 
 .popular-bars {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: grid; /* ใช้ grid layout เพื่อจัดเรียงรายการบาร์ */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* กำหนดการจัดเรียงคอลัมน์ */
+    gap: 20px; /* ช่องว่างระหว่างบาร์ */
+    max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+    margin: 0 auto; /* จัดกลางรายการ */
 }
 
 /* Bar List Section */
 .bar-list-section {
-    padding: 40px 20px;
-    background: #f9f9f9;
+    padding: 40px 20px; /* เพิ่ม padding รอบ ๆ */
+    background: #f9f9f9; /* สีพื้นหลัง */
 }
 
 .bar-list-section h3 {
-    text-align: center;
-    color: #ff5733;
-    font-size: 28px;
-    margin-bottom: 30px;
+    text-align: center; /* จัดตำแหน่งข้อความให้ตรงกลาง */
+    color: #ff5733; /* สีข้อความ */
+    font-size: 28px; /* ขนาดฟอนต์ */
+    margin-bottom: 30px; /* เพิ่มช่องว่างใต้หัวข้อ */
 }
 
 .bar-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: grid; /* ใช้ grid layout เพื่อจัดเรียงรายการบาร์ */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* กำหนดการจัดเรียงคอลัมน์ */
+    gap: 20px; /* ช่องว่างระหว่างบาร์ */
+    max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+    margin: 0 auto; /* จัดกลางรายการ */
 }
 
 .bar-item {
-    position: relative;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-    overflow: hidden;
+    position: relative; /* กำหนดตำแหน่ง relative เพื่อให้สามารถใช้กับตำแหน่ง absolute ได้ */
+    padding: 15px; /* เพิ่มช่องว่างภายในรายการ */
+    background: white; /* สีพื้นหลัง */
+    border-radius: 8px; /* ทำมุมโค้งให้กับกล่อง */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* เพิ่มเงาเล็กน้อย */
+    cursor: pointer; /* เปลี่ยน cursor เป็น pointer เมื่อ hover */
+    transition: transform 0.3s, box-shadow 0.3s; /* เพิ่มการเคลื่อนไหวและเงาเมื่อ hover */
+    overflow: hidden; /* ซ่อนส่วนที่เกินออกจากกล่อง */
 }
 
 .bar-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* ย้ายบาร์ขึ้นเล็กน้อยเมื่อ hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้เข้มขึ้นเมื่อ hover */
 }
 
 .bar-item.highlight {
-    border: 2px solid #ff5733;
-    box-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
+    border: 2px solid #ff5733; /* ทำขอบเป็นสี #ff5733 เมื่อมีการเลือก */
+    box-shadow: 0 0 10px rgba(255, 87, 51, 0.5); /* เพิ่มเงาล้อมรอบ */
 }
 
 .bar-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px 8px 0 0;
+    width: 100%; /* กำหนดให้รูปภาพมีความกว้างเต็มที่ */
+    height: 150px; /* กำหนดความสูง */
+    object-fit: cover; /* ทำให้ภาพครอบคลุมพื้นที่ของกรอบ */
+    border-radius: 8px 8px 0 0; /* ทำมุมโค้งด้านบน */
 }
 
 .bar-content {
-    padding: 10px;
+    padding: 10px; /* เพิ่มช่องว่างภายในของเนื้อหา */
 }
 
 .bar-item strong {
-    font-size: 16px;
-    color: #333;
-    display: block;
-    margin-bottom: 5px;
+    font-size: 16px; /* ขนาดฟอนต์ของชื่อบาร์ */
+    color: #333; /* สีของชื่อบาร์ */
+    display: block; /* ทำให้ข้อความอยู่ในบรรทัดเดียว */
+    margin-bottom: 5px; /* เพิ่มช่องว่างใต้ชื่อบาร์ */
 }
 
 .bar-item p {
-    font-size: 14px;
-    color: #666;
-    margin: 5px 0 10px;
+    font-size: 14px; /* ขนาดฟอนต์ของรายละเอียดบาร์ */
+    color: #666; /* สีของข้อความรายละเอียด */
+    margin: 5px 0 10px; /* เพิ่มช่องว่างระหว่างข้อความ */
 }
 
 .bar-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    color: #888;
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงข้อมูลเมตา */
+    justify-content: space-between; /* แบ่งข้อมูลออกเป็นสองฝั่ง */
+    font-size: 13px; /* ขนาดฟอนต์ */
+    color: #888; /* สีของข้อมูลเมตา */
 }
 
 .bar-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-top: 8px;
+    display: flex; /* ใช้ Flexbox สำหรับจัดการแท็ก */
+    flex-wrap: wrap; /* ให้แท็กสามารถแสดงหลายบรรทัดได้ */
+    gap: 5px; /* ช่องว่างระหว่างแท็ก */
+    margin-top: 8px; /* เพิ่มช่องว่างด้านบน */
 }
 
 .tag {
-    background-color: #f0f0f0;
-    color: #666;
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 12px;
+    background-color: #f0f0f0; /* สีพื้นหลังของแท็ก */
+    color: #666; /* สีข้อความในแท็ก */
+    padding: 2px 8px; /* เพิ่ม padding ให้กับแท็ก */
+    border-radius: 10px; /* ทำมุมโค้งให้กับแท็ก */
+    font-size: 12px; /* ขนาดฟอนต์ */
 }
 
 .ratings {
-    color: #ffc107;
+    color: #ffc107; /* สีของการให้คะแนน */
 }
+
 
 /* Footer */
 .footer {
-    background-color: #ff5733;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    background-color: #ff5733; /* สีพื้นหลังของฟุตเตอร์ */
+    color: white; /* สีของข้อความในฟุตเตอร์ */
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: 20px; /* เพิ่ม padding รอบ ๆ ฟุตเตอร์ */
 }
 
 .footer p {
-    margin: 0;
-    font-size: 14px;
+    margin: 0; /* ลบช่องว่างรอบ ๆ ของย่อหน้า */
+    font-size: 14px; /* ขนาดฟอนต์ของข้อความ */
 }
 
 /* Shared Styles */
 .loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    position: fixed; /* ตำแหน่งคงที่ติดกับหน้าจอ */
+    top: 0; /* ตั้งตำแหน่งให้เริ่มจากด้านบน */
+    left: 0; /* ตั้งตำแหน่งให้เริ่มจากด้านซ้าย */
+    width: 100%; /* ความกว้าง 100% ของหน้าจอ */
+    height: 100%; /* ความสูง 100% ของหน้าจอ */
+    background-color: rgba(255, 255, 255, 0.8); /* สีพื้นหลังแบบโปร่งใส */
+    display: flex; /* ใช้ Flexbox เพื่อจัดการตำแหน่งของเนื้อหาภายใน */
+    justify-content: center; /* จัดเนื้อหาให้อยู่กลางแนวนอน */
+    align-items: center; /* จัดเนื้อหาให้อยู่กลางแนวตั้ง */
+    z-index: 9999; /* ให้ตัวนี้อยู่บนสุด */
 }
 
 .loading-spinner {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #ff5733;
-    animation: spin 1s linear infinite;
+    width: 50px; /* กำหนดความกว้างของ spinner */
+    height: 50px; /* กำหนดความสูงของ spinner */
+    border-radius: 50%; /* ทำให้ spinner เป็นวงกลม */
+    border: 5px solid #f3f3f3; /* กำหนดขอบของ spinner */
+    border-top: 5px solid #ff5733; /* สีของขอบด้านบน */
+    animation: spin 1s linear infinite; /* การเคลื่อนไหวให้หมุน */
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); } /* เริ่มต้นจาก 0 องศา */
+    100% { transform: rotate(360deg); } /* หมุนไปถึง 360 องศา */
 }
 
 .notification {
-    position: fixed;
-    top: 80px;
-    right: 20px;
-    background-color: #ff5733;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    transform: translateX(120%);
+    position: fixed; /* ตำแหน่งคงที่ติดกับหน้าจอ */
+    top: 80px; /* ตั้งตำแหน่งจากด้านบน 80px */
+    right: 20px; /* ตั้งตำแหน่งจากด้านขวา 20px */
+    background-color: #ff5733; /* สีพื้นหลังของการแจ้งเตือน */
+    color: white; /* สีข้อความของการแจ้งเตือน */
+    padding: 10px 20px; /* เพิ่ม padding รอบ ๆ การแจ้งเตือน */
+    border-radius: 4px; /* ทำมุมโค้งให้กับกล่องการแจ้งเตือน */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเล็กน้อย */
+    z-index: 1000; /* ให้การแจ้งเตือนอยู่บนสุด */
+    transition: all 0.3s ease; /* การเปลี่ยนแปลงที่ราบรื่น */
+    transform: translateX(120%); /* เริ่มต้นจากการแสดงผลนอกหน้าจอทางขวา */
 }
 
 .notification.show {
-    transform: translateX(0);
+    transform: translateX(0); /* เมื่อแสดงผลแล้วให้กลับมาที่ตำแหน่งปกติ */
 }
 
 @media (max-width: 768px) {
     .bar-list, .popular-bars {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* เปลี่ยนจาก grid เป็น 1 คอลัมน์เมื่อหน้าจอเล็ก */
     }
 
     .hero-content h2 {
-        font-size: 32px;
+        font-size: 32px; /* ขนาดฟอนต์ของหัวข้อในส่วน Hero */
     }
 
     .hero-content p {
-        font-size: 16px;
+        font-size: 16px; /* ขนาดฟอนต์ของข้อความในส่วน Hero */
     }
 
     .hero-button {
-        padding: 10px 20px;
-        font-size: 16px;
+        padding: 10px 20px; /* ขนาด padding ของปุ่มในส่วน Hero */
+        font-size: 16px; /* ขนาดฟอนต์ของข้อความในปุ่ม */
     }
 
     .header-controls {
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-wrap: wrap; /* ทำให้ control ใน header ติดกันในหลายแถวเมื่อหน้าจอเล็ก */
+        gap: 10px; /* ช่องว่างระหว่าง control */
     }
 
     .search-container input {
-        width: 150px;
-        font-size: 12px;
+        width: 150px; /* กำหนดความกว้างของช่องค้นหา */
+        font-size: 12px; /* ขนาดฟอนต์ในช่องค้นหา */
     }
 
     .navbar-link {
-        padding: 8px 20px;
-        font-size: 14px;
+        padding: 8px 20px; /* ขนาด padding ของลิงก์ในเมนู */
+        font-size: 14px; /* ขนาดฟอนต์ของลิงก์ในเมนู */
     }
 }

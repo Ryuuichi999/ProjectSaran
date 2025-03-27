@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- กำหนดการเข้ารหัสของเอกสารเป็น UTF-8 -->
     <meta charset="UTF-8">
+    <!-- กำหนดการแสดงผลในอุปกรณ์เคลื่อนที่ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- กำหนดชื่อของหน้าต่าง (title) ให้เป็น "สมัครสมาชิก - KhonKaen Drinks Map" -->
     <title>สมัครสมาชิก - KhonKaen Drinks Map</title>
+    <!-- เชื่อมโยงไฟล์ CSS สำหรับการจัดรูปแบบหน้าสมัครสมาชิก -->
     <link rel="stylesheet" href="./css/register.css">
 </head>
 <body>
+    <!-- div ที่ใช้ห่อหุ้มฟอร์มสมัครสมาชิก -->
     <div class="register-container">
+        <!-- หัวข้อของหน้า -->
         <h2>สมัครสมาชิก</h2>
+        <!-- ฟอร์มสำหรับการสมัครสมาชิก -->
         <form id="registerForm" action="/register" method="POST">
+            <!-- กลุ่มฟอร์มสำหรับกรอกชื่อผู้ใช้ -->
             <div class="form-group">
+                <!-- ป้ายกำกับสำหรับชื่อผู้ใช้ -->
                 <label for="username">ชื่อผู้ใช้</label>
+                <!-- ช่องกรอกข้อมูลสำหรับชื่อผู้ใช้ -->
                 <input type="text" id="username" name="username" required>
             </div>
+            <!-- กลุ่มฟอร์มสำหรับกรอกอีเมล -->
             <div class="form-group">
+                <!-- ป้ายกำกับสำหรับอีเมล -->
                 <label for="email">อีเมล</label>
+                <!-- ช่องกรอกข้อมูลสำหรับอีเมล -->
                 <input type="email" id="email" name="email" required>
             </div>
+            <!-- กลุ่มฟอร์มสำหรับกรอกรหัสผ่าน -->
             <div class="form-group">
+                <!-- ป้ายกำกับสำหรับรหัสผ่าน -->
                 <label for="password">รหัสผ่าน</label>
+                <!-- ช่องกรอกข้อมูลสำหรับรหัสผ่าน -->
                 <input type="password" id="password" name="password" required>
             </div>
+            <!-- ปุ่มสำหรับส่งข้อมูลฟอร์มเพื่อสมัครสมาชิก -->
             <button type="submit">สมัครสมาชิก</button>
         </form>
+        <!-- ลิงก์สำหรับไปหน้าล็อคอิน หากมีบัญชีแล้ว -->
         <a href="login.html" class="login-link">มีบัญชีแล้ว? ล็อคอินที่นี่</a>
     </div>
+    <!-- เชื่อมโยงไฟล์ JavaScript สำหรับการทำงานของหน้าสมัครสมาชิก -->
     <script src="./js/login.js"></script>
+    <!-- เชื่อมโยงไฟล์ JavaScript สำหรับตรวจสอบการเข้าสู่ระบบ -->
     <script src="./js/redirectIfLoggedIn.js"></script>
 </body>
 </html>

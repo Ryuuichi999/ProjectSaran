@@ -1,28 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- กำหนดการเข้ารหัสของเอกสารเป็น UTF-8 -->
     <meta charset="UTF-8">
+    <!-- กำหนดการแสดงผลในอุปกรณ์เคลื่อนที่ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- กำหนดชื่อของหน้าต่าง (title) ให้เป็น "ล็อคอิน - KhonKaen Drinks Map" -->
     <title>ล็อคอิน - KhonKaen Drinks Map</title>
+    <!-- เชื่อมโยงไฟล์ CSS สำหรับการจัดรูปแบบหน้าจอล็อคอิน -->
     <link rel="stylesheet" href="./css/login.css">
 </head>
 <body>
+    <!-- div ที่ใช้ห่อหุ้มฟอร์มล็อคอิน -->
     <div class="login-container">
+        <!-- หัวข้อของหน้า -->
         <h2>เข้าสู่ระบบ</h2>
+        <!-- ฟอร์มสำหรับการล็อคอิน -->
         <form id="loginForm" action="/login" method="POST">
+            <!-- กลุ่มฟอร์มสำหรับกรอกชื่อผู้ใช้ -->
             <div class="form-group">
+                <!-- ป้ายกำกับสำหรับชื่อผู้ใช้ -->
                 <label for="username">ชื่อผู้ใช้</label>
+                <!-- ช่องกรอกข้อมูลสำหรับชื่อผู้ใช้ -->
                 <input type="text" id="username" name="username" required>
             </div>
+            <!-- กลุ่มฟอร์มสำหรับกรอกรหัสผ่าน -->
             <div class="form-group">
+                <!-- ป้ายกำกับสำหรับรหัสผ่าน -->
                 <label for="password">รหัสผ่าน</label>
+                <!-- ช่องกรอกข้อมูลสำหรับรหัสผ่าน -->
                 <input type="password" id="password" name="password" required>
             </div>
+            <!-- ปุ่มสำหรับส่งข้อมูลฟอร์มเพื่อเข้าสู่ระบบ -->
             <button type="submit">เข้าสู่ระบบ</button>
         </form>
+        <!-- ลิงก์สำหรับไปหน้าสมัครสมาชิก -->
         <a href="register.html" class="register-link">สมัครสมาชิก</a>
     </div>
+    <!-- เชื่อมโยงไฟล์ JavaScript สำหรับการทำงานของหน้าล็อคอิน -->
     <script src="./js/login.js"></script>
+    <!-- เชื่อมโยงไฟล์ JavaScript สำหรับตรวจสอบการเข้าสู่ระบบ -->
     <script src="./js/redirectIfLoggedIn.js"></script>
 </body>
 </html>
