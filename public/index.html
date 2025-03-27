@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KhonKaen Drinks Map - หน้าแรก</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
-    
 </head>
+
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
@@ -16,9 +17,15 @@
     <!-- Header -->
     <div class="header">
         <h1><i class="fas fa-glass-cheers"></i> KhonKaen Drinks Map</h1>
-        <div class="user-section" id="userSection">
-            <a href="login.html" class="navbar-link">ล็อคอิน</a>
-            <a href="register.html" class="navbar-link">สมัครสมาชิก</a>
+        <div class="header-controls">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="ค้นหาร้าน...">
+                <div class="autocomplete-suggestions" id="autocompleteSuggestions"></div>
+            </div>
+            <div class="user-section" id="userSection">
+                <a href="login.html" class="navbar-link">ล็อคอิน</a>
+                <a href="register.html" class="navbar-link">สมัครสมาชิก</a>
+            </div>
         </div>
     </div>
 
@@ -41,10 +48,9 @@
 
     <!-- Wheel Section -->
     <div class="wheel-container" id="wheelContainer" style="display: none;">
-        <div class="wheel" id="wheel">
-            <!-- วงล้อจะถูกสร้างด้วย JavaScript -->
-        </div>
-        <button class="spin-button" id="spinButton">หมุน!</button>
+        <h3>วงล้อสุ่มร้าน</h3>
+        <iframe src="https://wheelofnames.com/tdr-pq3" width="100%" height="500px" frameborder="0"></iframe>
+        <button class="close-wheel-button" id="closeWheelButton">ปิดวงล้อ</button>
     </div>
 
     <!-- Popular Bars Section -->
@@ -71,9 +77,15 @@
     <!-- Modal สำหรับจองโต๊ะ -->
     <div class="modal" id="reservationModal">
         <div class="modal-content">
-            <span class="close" onclick="closeReservationModal()">&times;</span>
+            <span class="close" onclick="closeReservationModal()">×</span>
             <h3>จองโต๊ะ</h3>
             <form id="reservationForm">
+                <div class="form-group">
+                    <label for="barSelect">เลือกร้าน:</label>
+                    <select id="barSelect" name="barSelect" required>
+                        <option value="">-- เลือกร้าน --</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="reservationName">ชื่อผู้จอง</label>
                     <input type="text" id="reservationName" name="name" required>
@@ -84,7 +96,8 @@
                 </div>
                 <div class="form-group">
                     <label for="numberOfPeople">จำนวนคน:</label>
-                    <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" required placeholder="เช่น 4">
+                    <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" required
+                        placeholder="เช่น 4">
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">เบอร์โทรศัพท์:</label>
@@ -100,4 +113,5 @@
     <script src="./js/script.js"></script>
     <script src="./js/userSection.js"></script>
 </body>
+
 </html>

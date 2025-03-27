@@ -19,8 +19,30 @@ let barLayer = null;
 const urlParams = new URLSearchParams(window.location.search);
 const selectedBarName = urlParams.get('bar');
 
+// Define custom icons for each type
+const barIcon = L.icon({
+    iconUrl: 'images/bar-icon.png', // ไอคอนสำหรับบาร์
+    iconSize: [32, 32], // ขนาดของไอคอน
+    iconAnchor: [16, 32], // จุดยึดของไอคอน (ครึ่งหนึ่งของความกว้าง, ความสูงเต็ม)
+    popupAnchor: [0, -32] // จุดยึดของ popup
+});
+
+const pubIcon = L.icon({
+    iconUrl: 'images/pub-icon.png', // ไอคอนสำหรับผับ
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
+const restaurantIcon = L.icon({
+    iconUrl: 'images/restaurant-icon.png', // ไอคอนสำหรับร้านอาหาร
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+});
+
 // Fetch GeoJSON data
-fetch('data/bars.geojson')
+fetch('/api/bars')
     .then(response => {
         if (!response.ok) {
             throw new Error('ไม่สามารถโหลดข้อมูล GeoJSON ได้');
@@ -29,24 +51,38 @@ fetch('data/bars.geojson')
     })
     .then(data => {
         barsData = data;
-        // เพิ่มข้อมูลร้านทั้งหมดลงในแผนที่และ sidebar
         barLayer = addBarsToMap(barsData);
         if (selectedBarName) {
             focusOnBar(selectedBarName);
         }
+        setupReservationModal();
     })
     .catch(error => {
         console.error('Error loading GeoJSON:', error);
         showNotification('เกิดข้อผิดพลาดในการโหลดข้อมูลร้าน');
     });
 
-// Create custom marker icon
+// Create custom marker icon based on type
 function createCustomMarker(feature) {
-    const rating = feature.properties.rating || 0;
-    let markerClass = 'custom-marker';
-    if (rating >= 4.5) markerClass += ' popular';
-    else if (feature.properties.features.includes('live')) markerClass += ' featured';
-    return L.divIcon({ className: markerClass, iconSize: [16, 16] });
+    const type = feature.properties.type;
+    let icon;
+
+    // เลือกไอคอนตามประเภทร้าน
+    switch (type) {
+        case 'bar':
+            icon = barIcon;
+            break;
+        case 'pub':
+            icon = pubIcon;
+            break;
+        case 'restaurant':
+            icon = restaurantIcon;
+            break;
+        default:
+            icon = barIcon; // ใช้ไอคอนบาร์เป็นค่าเริ่มต้น
+    }
+
+    return L.marker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], { icon: icon });
 }
 
 // Add bars to map and sidebar
@@ -64,7 +100,7 @@ function addBarsToMap(bars) {
     if (userMarker) map.addLayer(userMarker);
 
     const layer = L.geoJSON(bars, {
-        pointToLayer: (feature, latlng) => L.marker(latlng, { icon: createCustomMarker(feature) }),
+        pointToLayer: (feature, latlng) => createCustomMarker(feature),
         onEachFeature: (feature, layer) => {
             const props = feature.properties;
             const popupContent = `
@@ -305,10 +341,117 @@ function showNotification(message) {
     }
 }
 
+// Reservation Modal functionality
+function setupReservationModal() {
+    const reservationModal = document.getElementById('reservationModal');
+    const barSelect = document.getElementById('barSelect');
+    const reservationForm = document.getElementById('reservationForm');
+    const closeModal = document.querySelector('#reservationModal .close');
+
+    // โหลดรายการร้านลงใน <select>
+    function loadBarsIntoSelect() {
+        if (barsData && barSelect) {
+            barsData.features.forEach(feature => {
+                const barName = feature.properties.name;
+                const option = document.createElement('option');
+                option.value = barName;
+                option.textContent = barName;
+                barSelect.appendChild(option);
+            });
+        }
+    }
+
+    // เปิด modal
+    window.openReservationModal = function(barName = null) {
+        if (reservationModal) {
+            // ล้างตัวเลือกใน <select> ก่อน
+            barSelect.innerHTML = '<option value="">-- เลือกร้าน --</option>';
+            // โหลดรายการร้าน
+            loadBarsIntoSelect();
+            // ถ้ามี barName ที่ส่งมา ให้เลือกอัตโนมัติ
+            if (barName) {
+                barSelect.value = barName;
+            }
+            reservationModal.style.display = 'flex';
+        } else {
+            console.error('ไม่พบ element: reservationModal');
+        }
+    };
+
+    // ปิด modal
+    window.closeReservationModal = function() {
+        if (reservationModal) {
+            reservationModal.style.display = 'none';
+        }
+    };
+
+    // ปิด modal เมื่อคลิกนอก modal
+    window.addEventListener('click', (event) => {
+        if (event.target === reservationModal) {
+            reservationModal.style.display = 'none';
+        }
+    });
+
+    // จัดการการส่งฟอร์ม
+    if (reservationForm) {
+        reservationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const barName = document.getElementById('barSelect').value;
+            const reservationName = document.getElementById('reservationName').value;
+            const reservationDateTime = document.getElementById('reservationDateTime').value;
+            const numberOfPeople = document.getElementById('numberOfPeople').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+
+            // ตรวจสอบข้อมูล
+            if (!barName || !reservationName || !reservationDateTime || !numberOfPeople || !phoneNumber) {
+                showNotification('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return;
+            }
+
+            // ตรวจสอบรูปแบบเบอร์โทรศัพท์ (เช่น ต้องเป็นตัวเลข 10 หลัก)
+            const phonePattern = /^\d{10}$/;
+            if (!phonePattern.test(phoneNumber)) {
+                showNotification('เบอร์โทรศัพท์ต้องเป็นตัวเลข 10 หลัก');
+                return;
+            }
+
+            try {
+                // ส่งข้อมูลไปยัง API
+                const response = await fetch('/api/reserve', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        barName: barName,
+                        reservationName: reservationName,
+                        reservationDate: reservationDateTime,
+                        numberOfPeople: parseInt(numberOfPeople),
+                        phoneNumber: phoneNumber
+                    })
+                });
+
+                if (response.ok) {
+                    showNotification(`จองโต๊ะที่ ${barName} สำเร็จ! ชื่อ: ${reservationName}, จำนวน: ${numberOfPeople} คน, เบอร์: ${phoneNumber}`);
+                    reservationModal.style.display = 'none';
+                    reservationForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    showNotification(`เกิดข้อผิดพลาด: ${errorData.error}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                showNotification('เกิดข้อผิดพลาดในการจองโต๊ะ');
+            }
+        });
+    }
+}
+
 // Initialize everything after DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     setupSearch();
     setupFilters();
     setupPhotoGallery();
     setupUserLocation();
+    setupReservationModal(); // เพิ่มการตั้งค่า Modal การจองโต๊ะ
 });

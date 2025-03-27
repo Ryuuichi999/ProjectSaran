@@ -133,7 +133,6 @@ body {
 
 .navbar-links {
     display: flex;
-
 }
 
 .navbar-link {
@@ -150,13 +149,14 @@ body {
 
 .navbar-link:hover {
     background-color: #ff9500;
-    transform: scale(1.05); /* เพิ่มเอฟเฟกต์ขยายเมื่อ hover */
+    transform: scale(1.05);
 }
 
 .navbar-link:active {
     background-color: #ff5733;
-    transform: scale(0.98); /* เพิ่มเอฟเฟกต์ย่อขนาดเมื่อคลิก */
+    transform: scale(0.98);
 }
+
 .sidebar {
     flex: 1;
     max-width: 350px;
@@ -166,6 +166,7 @@ body {
     border-left: 3px solid #ff5733;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
 }
+
 .sidebar::-webkit-scrollbar {
     display: none;
 }
@@ -224,11 +225,13 @@ body {
     align-items: center;
     gap: 10px;
 }
+
 .user-section span {
     font-size: 16px;
     color: white;
     font-weight: bold;
 }
+
 .user-section button {
     background-color: #ff5733;
     color: white;
@@ -240,10 +243,12 @@ body {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
+
 .user-section button:hover {
     background-color: #ff9500;
     transform: scale(1.05);
 }
+
 .user-section button:active {
     background-color: #ff5733;
     transform: scale(0.98);
@@ -299,12 +304,24 @@ body {
     color: #333;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
+}
+
+.form-group select {
+    background-color: white;
+    cursor: pointer;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: none;
+    border-color: #ff5733;
 }
 
 .submit-button {
@@ -335,34 +352,11 @@ body {
     color: #ffc107;
 }
 
-.custom-marker {
-    background-color: #ff5733;
-    border-radius: 50%;
-    color: white;
-    width: 12px;
-    height: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid white;
-}
-
-.custom-marker.featured {
-    background-color: #ff9500;
-    width: 16px;
-    height: 16px;
-}
-
-.custom-marker.popular {
-    background-color: #ff3b30;
-    width: 16px;
-    height: 16px;
-}
-
+/* ลบสไตล์ custom-marker เพราะไม่ใช้หมุดวงกลมอีกต่อไป */
 .popup-content {
     padding: 5px;
     max-width: 250px;
-    z-index: 1500; /* เพิ่ม z-index เพื่อให้แน่ใจว่าไม่ทับ filter-options */
+    z-index: 1500;
 }
 
 .popup-content h3 {
@@ -398,8 +392,6 @@ body {
     cursor: pointer;
 }
 
-
-
 .legend {
     position: absolute;
     bottom: 20px;
@@ -423,24 +415,10 @@ body {
     margin-bottom: 5px;
 }
 
-.legend-color {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+.legend-icon {
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
-    border: 1px solid #ccc;
-}
-
-.legend-color.default {
-    background-color: #ff5733;
-}
-
-.legend-color.popular {
-    background-color: #ff3b30;
-}
-
-.legend-color.featured {
-    background-color: #ff9500;
 }
 
 #photoGallery {

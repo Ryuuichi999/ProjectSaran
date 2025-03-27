@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="./css/map.css">
-   
 </head>
+
 <body>
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
@@ -82,7 +83,6 @@
     </div>
     <div class="container">
         <div id="map"></div>
-        <!-- ลบปุ่ม toggle-sidebar ออก -->
         <button class="user-location-button" id="userLocationButton">
             <i class="fas fa-location-arrow"></i>
         </button>
@@ -94,15 +94,15 @@
     <div class="legend" id="mapLegend">
         <h4>สัญลักษณ์แผนที่</h4>
         <div class="legend-item">
-            <div class="legend-color default"></div>
+            <img src="images/bar-icon.png" class="legend-icon" alt="บาร์">
             <span>บาร์</span>
         </div>
         <div class="legend-item">
-            <div class="legend-color popular"></div>
+            <img src="images/pub-icon.png" class="legend-icon" alt="ผับ">
             <span>ผับ</span>
         </div>
         <div class="legend-item">
-            <div class="legend-color featured"></div>
+            <img src="images/restaurant-icon.png" class="legend-icon" alt="ร้านอาหาร">
             <span>ร้านอาหาร</span>
         </div>
     </div>
@@ -125,9 +125,15 @@
     <!-- Modal สำหรับจองโต๊ะ -->
     <div class="modal" id="reservationModal">
         <div class="modal-content">
-            <span class="close" onclick="closeReservationModal()">&times;</span>
+            <span class="close" onclick="closeReservationModal()">×</span>
             <h3>จองโต๊ะ</h3>
             <form id="reservationForm">
+                <div class="form-group">
+                    <label for="barSelect">เลือกร้าน:</label>
+                    <select id="barSelect" name="barSelect" required>
+                        <option value="">-- เลือกร้าน --</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="reservationName">ชื่อผู้จอง</label>
                     <input type="text" id="reservationName" name="name" required>
@@ -138,7 +144,8 @@
                 </div>
                 <div class="form-group">
                     <label for="numberOfPeople">จำนวนคน:</label>
-                    <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" required placeholder="เช่น 4">
+                    <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" required
+                        placeholder="เช่น 4">
                 </div>
                 <div class="form-group">
                     <label for="phoneNumber">เบอร์โทรศัพท์:</label>
@@ -155,4 +162,5 @@
     <script src="./js/map.js"></script>
     <script src="./js/userSection.js"></script>
 </body>
+
 </html>

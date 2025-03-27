@@ -72,8 +72,8 @@
             },
             "properties": {
                 "name": "Alone in the Universe",
-                "description": "บาร์เงียบสงบสำหรับคนรักความเป็นส่วนตัว",
-                "type": "bar",
+                "description": "ร้านที่วัยรุ่นชอบไปตึดๆมันส์ๆ",
+                "type": "pub",
                 "price_level": 2,
                 "rating": 4.2,
                 "features": ["outdoor"],
@@ -94,7 +94,7 @@
             "properties": {
                 "name": "Hashtags ขอนแก่น",
                 "description": "ร้านทันสมัย เหมาะกับวัยรุ่นและการถ่ายรูป",
-                "type": "bar",
+                "type": "pub",
                 "price_level": 2,
                 "rating": 4.4,
                 "features": ["parking"],
@@ -136,7 +136,7 @@
             "properties": {
                 "name": "Rong Lao Mittraphap Khon Kaen",
                 "description": "โรงเหล้าสไตล์อีสานแท้ ๆ",
-                "type": "bar",
+                "type": "pub",
                 "price_level": 1,
                 "rating": 4.0,
                 "features": ["live", "parking"],
